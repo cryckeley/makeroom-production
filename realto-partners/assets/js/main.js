@@ -119,11 +119,17 @@ const SITE = {
         timer = setTimeout(stop, duration);
       });
     };
-    const host = img.closest(".yt") || img;
+    const host = img.closest("[data-anim-host], .yt") || img;
     if (window.matchMedia("(hover: hover)").matches) {
       host.addEventListener("mouseenter", play);
       host.addEventListener("focus", play);
-      load();
+      // Fetch the animation only when it is about to be seen
+      if ("IntersectionObserver" in window) {
+        const pre = new IntersectionObserver((entries) => {
+          if (entries.some((e) => e.isIntersecting)) { load(); pre.disconnect(); }
+        }, { rootMargin: "300px" });
+        pre.observe(host);
+      } else load();
     } else if ("IntersectionObserver" in window) {
       let seen = false;
       new IntersectionObserver((entries) => entries.forEach((e) => {
