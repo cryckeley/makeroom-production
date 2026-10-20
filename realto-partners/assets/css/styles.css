@@ -633,9 +633,10 @@ button[disabled] { opacity: 0.6; pointer-events: none; }
 
 /* ---------- Reveal on scroll ---------- */
 
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
-.reveal.d1 { transition-delay: 0.1s; } .reveal.d2 { transition-delay: 0.2s; } .reveal.d3 { transition-delay: 0.3s; }
+/* Content is visible by default; the fade-in only applies once the page script is confirmed running */
+.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+.js .reveal.d1 { transition-delay: 0.1s; } .js .reveal.d2 { transition-delay: 0.2s; } .js .reveal.d3 { transition-delay: 0.3s; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
