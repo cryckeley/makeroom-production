@@ -113,8 +113,9 @@ const SITE = {
       playing = true;
       load().then((b) => {
         if (!playing) return;
-        url = b ? URL.createObjectURL(b) : "";
-        img.src = url || img.dataset.anim;
+        if (!b) { playing = false; return; } // animation unavailable: keep the still
+        url = URL.createObjectURL(b);
+        img.src = url;
         clearTimeout(timer);
         timer = setTimeout(stop, duration);
       });

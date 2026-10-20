@@ -13,6 +13,8 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
 ## The look we want
 - Dan: a quick playful wink, then a small, warm turn of the head toward the camera, then back.
 - Allison: leans slightly toward the camera, tilts her head to one side, smiles, then eases back.
+- When Dan and Allison appear together (side by side or in two halves of one graphic), they turn
+  toward each other: he looks at her, she looks at him. Alone, each turns toward the camera.
 - Natural and gentle, clearly visible. Camera locked. Background, clothing and the green-tinted
   black and white grade unchanged.
 - Starts and ends on the exact still, so the loop and the still/animation swap are invisible.
@@ -45,16 +47,19 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
    ```
    `--keep-left` keeps the left part of the frame as the untouched still (use it whenever the
    image has baked-in text or graphics, like the video posters; 0 for photo-only banners).
-   It writes `images/NAME.jpg` (the still, from the first composited frame) and
+   Use `--width 1024 --fps 12 --quality 60` for cards and portraits (about 1.5 to 2 MB) and keep
+   wide banners at the 1600 default. It writes `images/NAME.jpg` (the still, from the first composited frame) and
    `images/NAME-turn.webp` (1600px, 15 fps, about 1 to 1.5 MB), and prints `data-anim-ms`.
 5. **Markup.** On the `<img>` (in the generator, then rebuild):
    ```html
    <img src="images/NAME.jpg" data-anim="images/NAME-turn.webp" data-anim-ms="5000" alt="" ...>
    ```
    `assets/js/main.js` handles every `img[data-anim]`: hover or keyboard focus on the nearest
-   `.yt` (or the image itself) on hover-capable devices, IntersectionObserver at 60% visibility on
+   `[data-anim-host]` or `.yt` (or the image itself; add `data-anim-host` to a wrapper when text or
+   overlays sit on top of the image, or when several images should play together) on hover-capable devices, IntersectionObserver at 60% visibility on
    touch devices, nothing for `prefers-reduced-motion`. Each play gets a fresh blob URL so it
-   restarts from frame one, then swaps back to the still after `data-anim-ms`.
+   restarts from frame one, then swaps back to the still after `data-anim-ms`. On desktop the
+   animation file is fetched only when the image comes within 300px of the screen.
 6. **Verify** in Chromium (Playwright, `executable_path="/opt/pw-browsers/chromium"`) over a local
    http server (blob fetch does not work from file://): src becomes `blob:` on hover, returns to
    the still after the duration, plays on scroll with a mobile/touch context, stays still with
