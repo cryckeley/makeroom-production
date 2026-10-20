@@ -195,18 +195,65 @@ p { margin: 0 0 1.1em; }
 .nav-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 @media (max-width: 920px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; position: relative; z-index: 2; }
+  /* Off-canvas panel that slides in from the right */
   .nav {
-    position: fixed; inset: 0; z-index: -1;
-    flex-direction: column; justify-content: center; gap: 26px;
-    background: var(--ink); color: var(--ivory);
-    opacity: 0; visibility: hidden; transition: opacity 0.35s, visibility 0.35s;
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: -1;
+    width: min(86vw, 390px); height: 100vh; height: 100dvh; overflow-y: auto;
+    flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0;
+    padding: 104px 30px calc(30px + env(safe-area-inset-bottom, 0px));
+    color: var(--ivory);
+    background:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'><g fill='none' stroke='%231ba32e' stroke-opacity='0.16' stroke-width='1'><path d='M-20 120 C 80 60 180 160 300 110 S 520 40 640 120'/><path d='M-20 160 C 90 100 190 200 300 150 S 520 80 640 160'/><path d='M-20 200 C 100 140 200 240 300 190 S 520 120 640 200'/><path d='M-20 260 C 70 230 170 320 310 260 S 500 190 640 270'/><path d='M-20 300 C 80 270 180 360 310 300 S 500 230 640 310'/><path d='M-20 360 C 110 320 210 420 320 360 S 530 300 640 370'/><path d='M-20 400 C 120 360 220 460 320 400 S 530 340 640 410'/><path d='M-20 460 C 90 430 200 520 300 470 S 510 400 640 470'/><path d='M-20 500 C 100 470 210 560 300 510 S 510 440 640 510'/><path d='M-20 560 C 80 520 190 600 310 560 S 520 500 640 560'/></g></svg>") 0 0 / 600px 600px,
+      radial-gradient(120% 60% at 100% 0%, rgba(27,163,46,0.22), transparent 60%),
+      radial-gradient(90% 50% at 0% 100%, rgba(27,163,46,0.14), transparent 60%),
+      var(--ink);
+    border-left: 1px solid rgba(143,229,155,0.18);
+    box-shadow: -30px 0 60px -20px rgba(0,0,0,0.6);
+    transform: translateX(100%); visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.5s;
   }
-  .nav a { font-size: 1.5rem; font-family: var(--f-display); font-weight: 400; }
-  .nav .btn { font-family: var(--f-body); font-size: 1rem; font-weight: 700; }
-  .nav-open .nav { opacity: 1; visibility: visible; }
-  .nav-open .site-header { color: var(--ivory); }
+  .nav a:not(.btn) {
+    font-family: var(--f-display); font-weight: 400; font-size: 1.65rem; line-height: 1.1;
+    padding: 16px 0; border-bottom: 1px solid rgba(243,245,242,0.1); opacity: 1;
+    display: flex; align-items: center;
+  }
+  .nav a[aria-current="page"]:not(.btn) { color: var(--green-hi); font-style: italic; }
+  .nav a[aria-current="page"]:not(.btn)::after { display: none; }
+  .nav .btn { margin-top: 28px; justify-content: center; font-family: var(--f-body); font-size: 1rem; font-weight: 700; padding: 16px 20px; }
+  .nav::after {
+    content: "303.261.5278  \00B7  Highlands Ranch, Colorado"; display: block; margin-top: 18px; text-align: center;
+    font: 600 0.72rem/1.4 var(--f-mark); letter-spacing: 0.16em; color: rgba(243,245,242,0.72);
+  }
+  /* Links glide in one after another */
+  .nav > * { opacity: 0; transform: translateX(28px); transition: opacity 0.4s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+  .nav-open .nav > * { opacity: 1; transform: none; }
+  .nav-open .nav > :nth-child(1) { transition-delay: 0.10s; }
+  .nav-open .nav > :nth-child(2) { transition-delay: 0.14s; }
+  .nav-open .nav > :nth-child(3) { transition-delay: 0.18s; }
+  .nav-open .nav > :nth-child(4) { transition-delay: 0.22s; }
+  .nav-open .nav > :nth-child(5) { transition-delay: 0.26s; }
+  .nav-open .nav > :nth-child(6) { transition-delay: 0.30s; }
+  .nav-open .nav > :nth-child(7) { transition-delay: 0.36s; }
+  .nav-open .nav { transform: none; visibility: visible; transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s; }
+  /* Dim and blur the page behind; tapping it closes the menu */
+  .site-header::before {
+    content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background: rgba(10, 12, 11, 0.55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .nav-open .site-header::before { opacity: 1; pointer-events: auto; }
+  /* The header's frosted blur would trap the fixed panel inside the bar, so drop it while open */
+  .nav-open .site-header, .nav-open .site-header.scrolled {
+    color: var(--ivory); background: transparent; border-color: transparent;
+    backdrop-filter: none; -webkit-backdrop-filter: none;
+  }
   body.nav-open { overflow: hidden; }
+}
+@media (max-width: 920px) and (prefers-reduced-motion: reduce) {
+  .nav, .nav > * { transform: none !important; }
+  .nav { opacity: 0; transition: opacity 0.25s, visibility 0s linear 0.25s; }
+  .nav-open .nav { opacity: 1; transition: opacity 0.25s; }
 }
 
 /* ---------- Sections ---------- */

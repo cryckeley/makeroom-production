@@ -49,12 +49,14 @@ const SITE = {
       const open = doc.body.classList.toggle("nav-open");
       toggle.setAttribute("aria-expanded", open);
     });
-    doc.querySelectorAll(".nav a").forEach((a) =>
-      a.addEventListener("click", () => {
-        doc.body.classList.remove("nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-      })
-    );
+    const closeNav = () => {
+      doc.body.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+    doc.querySelectorAll(".nav a").forEach((a) => a.addEventListener("click", closeNav));
+    // Tapping the dimmed page (the header's backdrop) or pressing Escape closes the menu
+    header.addEventListener("click", (e) => { if (e.target === header && doc.body.classList.contains("nav-open")) closeNav(); });
+    doc.addEventListener("keydown", (e) => { if (e.key === "Escape" && doc.body.classList.contains("nav-open")) { closeNav(); toggle.focus(); } });
   }
 
   /* ---------- Photo fallback: show a styled frame until the real image is in /images ---------- */
