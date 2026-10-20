@@ -994,3 +994,12 @@ body.lb-open { overflow: hidden; }
 
 /* Contrast pass: keep hero facts legible over the photo */
 .hero-meta div { color: rgba(243,245,242,0.9); text-shadow: 0 1px 12px rgba(0,0,0,0.65), 0 0 2px rgba(0,0,0,0.5); }
+
+/* Podcast page: show logo in the dark left side of the latest-episodes banner */
+.yt-list .yt-logo {
+  position: absolute; z-index: 1; left: 30%; top: 40%; transform: translate(-50%, -50%);
+  width: clamp(96px, 13vw, 168px); height: auto; border-radius: 50%; opacity: 1;
+  box-shadow: 0 0 0 3px var(--brass), 0 18px 40px -12px rgba(0,0,0,0.7);
+}
+.yt-list:hover .yt-logo { transform: translate(-50%, -50%); }
+@media (max-width: 640px) { .yt-list .yt-logo { left: 110px; right: auto; top: 18px; transform: none; width: 62px; box-shadow: 0 0 0 2px var(--brass), 0 10px 24px -10px rgba(0,0,0,0.7); } .yt-list:hover .yt-logo { transform: none; } }
