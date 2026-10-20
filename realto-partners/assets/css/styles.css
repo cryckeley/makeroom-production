@@ -985,7 +985,7 @@ body.lb-open { overflow: hidden; }
 .yt-list .play { top: clamp(22px, 4vw, 44px); left: clamp(22px, 4vw, 48px); right: auto; transform: none; }
 .yt-list:hover .play { transform: scale(1.06); }
 .yt img { opacity: 0.94; }
-@media (max-width: 640px) { .yt-list .play { top: 22px; } .yt-list .yt-bg { object-position: 78% center; } }
+@media (max-width: 640px) { .yt-list { aspect-ratio: 1 / 1; } .yt-list .play { top: 22px; } .yt-list .yt-bg { object-position: 86% center; } }
 .video-card .yt .play { left: auto; top: auto; right: 18px; bottom: 18px; transform: none; width: 60px; height: 60px; }
 .video-card .yt:hover .play { transform: scale(1.06); }
 .video-card .yt .play svg { width: 22px; height: 22px; }
