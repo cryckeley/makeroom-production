@@ -741,3 +741,76 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
     linear-gradient(135deg, rgba(27,163,46,0.07), transparent 55%);
   box-shadow: inset 0 0 0 1px rgba(27,163,46,0.25);
 }
+
+/* ==========================================================================
+   Team hero: full-bleed crossfading team photos + a moving strip of the pack
+   ========================================================================== */
+.hero-team {
+  position: relative; overflow: hidden; isolation: isolate;
+  min-height: min(100svh, 1000px);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding-top: 150px;
+  background:
+    radial-gradient(70% 60% at 80% 20%, rgba(27,163,46,0.28), transparent 60%),
+    radial-gradient(60% 50% at 10% 90%, rgba(27,163,46,0.12), transparent 60%),
+    var(--ink);
+}
+.hero-slides { position: absolute; inset: 0; z-index: -2; }
+.hero-slides img {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 35%;
+  opacity: 0; filter: saturate(0.85) contrast(1.06);
+  animation: heroSlide 28s linear infinite;
+}
+.hero-slides img:nth-child(1) { animation-delay: -1.4s; }
+.hero-slides img:nth-child(2) { animation-delay: 5.6s; }
+.hero-slides img:nth-child(3) { animation-delay: 12.6s; }
+.hero-slides img:nth-child(4) { animation-delay: 19.6s; }
+@keyframes heroSlide {
+  0%   { opacity: 0; transform: scale(1.02); }
+  5%   { opacity: 1; }
+  25%  { opacity: 1; }
+  32%  { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+.hero-shade {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(29,33,31,0.94) 0%, rgba(29,33,31,0.78) 42%, rgba(29,33,31,0.3) 100%),
+    linear-gradient(180deg, rgba(29,33,31,0.55) 0%, transparent 25%, transparent 60%, var(--ink) 100%),
+    linear-gradient(135deg, rgba(27,163,46,0.18), transparent 50%);
+}
+.hero-inner { padding-bottom: 40px; }
+.hero-inner h1 { max-width: 15ch; font-size: clamp(2.8rem, 7.4vw, 6.2rem); margin-bottom: 26px; }
+.hero-inner .lede { max-width: 56ch; margin-bottom: 34px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.hero-founder {
+  display: inline-flex; align-items: center; gap: 12px; margin-left: 8px; text-decoration: none;
+  padding: 6px 16px 6px 6px; border-radius: 999px; border: 1px solid var(--line-dark); background: rgba(29,33,31,0.5);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 0.78rem; color: rgba(243,245,242,0.7); line-height: 1.25;
+}
+.hero-founder:hover { border-color: var(--brass); }
+.hero-founder .photo { width: 42px; height: 42px; border-radius: 50%; flex: none; }
+.hero-founder .photo.missing::after, .hero-founder .photo.missing::before { display: none; }
+.hero-founder b { display: block; font-family: var(--f-display); font-weight: 500; font-size: 1rem; color: var(--ivory); }
+.hero-team .hero-meta { margin-top: clamp(36px, 5vw, 56px); }
+
+.pack-strip { position: relative; padding: 22px 0 28px; overflow: hidden; border-top: 1px solid var(--line-dark); background: rgba(29,33,31,0.6); }
+.pack-strip::before, .pack-strip::after { content: ""; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 1; pointer-events: none; }
+.pack-strip::before { left: 0; background: linear-gradient(90deg, var(--ink), transparent); }
+.pack-strip::after { right: 0; background: linear-gradient(-90deg, var(--ink), transparent); }
+.pack-track { display: flex; gap: 14px; width: max-content; animation: packScroll 70s linear infinite; }
+.pack-strip:hover .pack-track { animation-play-state: paused; }
+.pack-frame { width: clamp(150px, 16vw, 230px); aspect-ratio: 4 / 3; border-radius: 12px; flex: none; }
+.pack-frame.missing::after, .pack-frame.missing::before { display: none; }
+@keyframes packScroll { to { transform: translateX(-50%); } }
+
+@media (max-width: 760px) {
+  .hero-team { min-height: 0; padding-top: 120px; }
+  .hero-shade { background: linear-gradient(180deg, rgba(29,33,31,0.7) 0%, rgba(29,33,31,0.88) 55%, var(--ink) 100%); }
+  .hero-founder { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slides img { animation: none; }
+  .hero-slides img:first-child { opacity: 1; }
+  .pack-track { animation: none; }
+}
