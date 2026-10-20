@@ -35,7 +35,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 | `dan-speaking.jpg` | Portrait crop of `.../DG-Website/Images/Dan-chair-den.jpg` | Meet Dan, podcast art, host card |
 | `dan-wide.jpg` | `.../DG-Website/Images/Dan-chair-den.jpg` | Gallery |
 | `dan-candid.jpg` | `/Acendant Title/Pen Bag/Dan Pic.jpg` | Gallery, photo strip |
-| `allison.jpg`, `allison-2.jpg` | Tight crops of `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg` and `allisong-4.jpg` | Allison portraits, podcast art |
+| `allison.jpg`, `allison-2.jpg` | Business headshots made from `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg`: background removed with an AI model and placed on a ReAlto green studio backdrop (`allison.jpg`) and a light gray studio backdrop (`allison-2.jpg`), cropped head and shoulders. Her face is unedited. | Allison portraits, host cards, podcast art, photo strip |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
 | `resilient-logo.png`, `podcast-cover.jpg` | The Resilient Real Estate Agent YouTube channel logo and banner | Podcast badge and share image |
@@ -43,11 +43,10 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 Not used on purpose: `Dan-speaking-wh.jpg` (has Shutterstock watermarks), `whyhole.jpg` and
 `onbording-plus.jpg` (old graphics with text), `welcome.jpg` (video still).
 
-Allison's only professional photos are from her former ceremony business shoot, so they are cropped tight to
-her face. A current Realtor headshot of Allison, and a photo of Dan and Allison together, would be the best
-upgrades: replace `allison.jpg` / `allison-2.jpg` with the same names.
+Nothing from Allison's former, separate business is shown: the original room, props and styling are gone. A new
+professional Realtor headshot can replace these anytime; keep the same file names.
 
-Every photo gets the same ReAlto color grade and brass edge automatically (in `styles.css`, "One consistent
+Every photo gets the same ReAlto color grade and green edge automatically (in `styles.css`, "One consistent
 ReAlto photo grade"), so shots from different shoots look like one set. For the closest match, crop portraits
 to 4:5 and use photos with soft, warm light.
 
@@ -101,7 +100,7 @@ When you edit content, update the date in both places (search for `2026-10-20`).
    (hide the street address, set service areas to Denver metro, Highlands Ranch, Douglas County and
    Colorado Springs). Use exactly the same name and phone as the site.
 4. **Consistent listings.** Match name, city and phone on eXp agent pages, LinkedIn, Instagram, Facebook,
-   Yelp and Zillow. Link back to the site from Dan's and Allison's profiles and from allisongomer.com.
+   Yelp and Zillow. Link back to the site from Dan's and Allison's profiles.
 5. **Validate.** Run each page through Google's Rich Results Test and the Schema.org validator.
 
 ## 6. Confirm with Dan and Allison before launch

@@ -833,3 +833,22 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
   40%  { opacity: 0; transform: scale(1.1); }
   100% { opacity: 0; transform: scale(1.1); }
 }
+
+/* Allison monogram card (stands in for a portrait until a current Realtor headshot is added) */
+.photo.monogram {
+  aspect-ratio: 4 / 5; display: grid; place-content: center; justify-items: center; gap: 18px; text-align: center;
+  background:
+    radial-gradient(80% 60% at 70% 20%, rgba(27,163,46,0.30), transparent 60%),
+    radial-gradient(60% 50% at 20% 90%, rgba(27,163,46,0.12), transparent 60%),
+    linear-gradient(160deg, var(--ink-3), var(--ink));
+  color: var(--ivory); border: 1px solid rgba(27,163,46,0.35);
+}
+.photo.monogram::after { content: none; }
+.mono-initials {
+  font: 700 clamp(4.5rem, 12vw, 8rem)/1 var(--f-mark); letter-spacing: 0.04em;
+  padding: 0.18em 0.32em; border: 2px solid var(--brass); color: var(--ivory);
+}
+.mono-name { font: 600 0.8rem/1 var(--f-mark); letter-spacing: 0.32em; text-transform: uppercase; color: var(--brass-soft); }
+.host .photo.monogram, .photo.monogram.host-mono { aspect-ratio: 1; padding: 0; gap: 0; border-radius: 50%; }
+.host .photo.monogram .mono-initials { font-size: 1rem; padding: 0; border: 0; }
+.host .photo.monogram .mono-name { display: none; }
