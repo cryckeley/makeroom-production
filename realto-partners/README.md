@@ -6,7 +6,7 @@ Upload the contents of this folder to GoDaddy and it works.
 ```
 index.html                  Home: ReAlto overview, podcast feature, eXp model, team life, Allison, FAQ
 dan-gomer.html              Dan Gomer biography, book, speaking, values, FAQ
-allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, cacao ceremonies, FAQ, inquiry form
+allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, FAQ, inquiry form
 join-exp-realty-team.html   Why ReAlto, how eXp Realty works, local roots, agent FAQ, agent inquiry form
 podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, 3R Framework, hosts, guest form
 contact.html                General contact form
@@ -35,7 +35,6 @@ originals are 10 to 20 MB each and should not be uploaded as is.
 | `dan-about.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Public Persona/DG-Projects/website assets/Dan-about.jpg` |
 | `allison.jpg` | `/Allison Gomer/about-allison.jpg` |
 | `allison-2.jpg` | `/Allison Gomer/allisong-18.jpg` (any shot from the Megan Sawaya business shoot works) |
-| `allison-cacao.jpg` | `/Allison Gomer/cerimonial-cacao-16x9.jpg` |
 | `dan-allison.jpg` | **Needed from Dan:** a photo of Dan and Allison together (portrait orientation, about 1600 x 2000) |
 | `resilient-logo.png` | **The Resilient Real Estate Agent** channel logo (square, at least 400px). Shows as a round badge on the podcast artwork; hidden until uploaded |
 | `team-capitol.png` | `/Realto Partners/team-capitoil.png` (also the default social share image) |
@@ -75,7 +74,7 @@ so new episodes appear on the site automatically with no updates needed.
 ## 4. SEO and AI search: what's built in
 
 - One H1 per page that carries the main keyword, plus question-style H2s ("What is ReAlto Partners?",
-  "What happens in a cacao ceremony?") that match how people search and how AI assistants answer.
+  "How does an eXp Realty team create recurring income?") that match how people search and how AI assistants answer.
 - Unique title (under 60 characters) and meta description (under 160) on every page, plus canonical URLs,
   Open Graph and Twitter cards.
 - JSON-LD structured data as one linked `@graph`: WebSite, RealEstateAgent (ReAlto Partners, with eXp Realty
@@ -110,9 +109,9 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 - The podcast copy uses the channel's own description (3R Framework: resiliency, resourcefulness,
   responsibility). The one-line definitions of each R on `podcast.html` are written for the site; Dan
   should check they match how he teaches it.
-- Allison's page now leads with her role as a Realtor and partner, mentions her psychotherapy background
-  as past experience, and keeps her cacao ceremonies as a secondary "beyond real estate" section linking
-  to allisongomer.com. She should approve it, and confirm she still offers ceremonies.
+- Allison's page presents her only as a Realtor and partner at ReAlto Partners and podcast co-host. Her
+  separate business is intentionally not referenced anywhere on the site or in the structured data. The
+  "What Allison believes" section is written from her values; she should approve the wording.
 - Dan's timeline (real estate since 2012, Your Castle Real Estate, eXp since 2022) comes from his LinkedIn.
 - Location is listed as Highlands Ranch with service areas around it. Phone 303.261.5278 is from Dan's
   earlier website copy.
@@ -128,5 +127,6 @@ cPanel > File Manager > `public_html` > Upload. Upload everything in this folder
 - Cinzel: the ReAlto brand font (logo, labels)
 - Fraunces: headlines
 - Manrope: body text
-- Colors are CSS variables at the top of `assets/css/styles.css` (ink, ivory, brass, ember, plus the
-  warmer cacao and clay tones on Allison's page).
+- Colors follow the ReAlto logo pack: brand green `#1ba32e` (the contrast color) and charcoal `#262626`,
+  enriched into a charcoal/cool-gray system with a deeper green for text on light backgrounds. They are
+  CSS variables at the top of `assets/css/styles.css`.

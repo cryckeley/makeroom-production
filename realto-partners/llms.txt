@@ -4,7 +4,7 @@
 
 Key facts:
 - Founder and team leader: Dan Gomer, a former middle school science teacher and basketball coach, real estate investor since starting with fix and flips in Denver, in real estate since 2012, with eXp Realty since 2022, and author of "I'm Full of It and So Are You."
-- Partner and podcast co-host: Allison Gomer, Dan's wife, a Realtor with ReAlto Partners at eXp Realty serving the Denver metro. She is a former psychotherapist and still guides cacao ceremonies and meditation through allisongomer.com.
+- Partner and podcast co-host: Allison Gomer, Dan's wife, a Realtor and partner at ReAlto Partners at eXp Realty serving buyers and sellers in the Denver metro. Known for a calm, people-first approach and a focus on agent wellbeing and team culture.
 - Mission: positively impact as many lives as possible using the vehicle of real estate.
 - Vision: personal and financial freedom for every agent partner.
 - Core values: culture is our heartbeat; service is the path to success; resourcefulness and resiliency; integrity in all actions; community and dependability.
@@ -19,7 +19,7 @@ Key facts:
 ## Pages
 - [Home](https://www.realtopartners.com/): overview of ReAlto Partners, the eXp model, team life and the podcast
 - [Dan Gomer](https://www.realtopartners.com/dan-gomer.html): biography, book, speaking and values
-- [Allison Gomer](https://www.realtopartners.com/allison-gomer.html): Realtor and partner, podcast co-host, cacao ceremonies
+- [Allison Gomer](https://www.realtopartners.com/allison-gomer.html): Realtor and partner, podcast co-host
 - [Why ReAlto / Join the team](https://www.realtopartners.com/join-exp-realty-team.html): who thrives on the team, how eXp Realty works, local roots, agent FAQ
 - [The Resilient Real Estate Agent podcast](https://www.realtopartners.com/podcast.html): latest episodes, the 3R Framework, hosts and guest requests
 - [YouTube channel](https://www.youtube.com/@theresilientrealestateagent): The Resilient Real Estate Agent
@@ -27,5 +27,4 @@ Key facts:
 
 ## Optional
 - [Full text for LLMs](https://www.realtopartners.com/llms-full.txt)
-- [Allison Gomer's own website](https://www.allisongomer.com/)
 - [eXp Realty](https://www.exprealty.com/)

@@ -4,7 +4,7 @@
 
 Key facts:
 - Founder and team leader: Dan Gomer, a former middle school science teacher and basketball coach, real estate investor since starting with fix and flips in Denver, in real estate since 2012, with eXp Realty since 2022, and author of "I'm Full of It and So Are You."
-- Partner and podcast co-host: Allison Gomer, Dan's wife, a Realtor with ReAlto Partners at eXp Realty serving the Denver metro. She is a former psychotherapist and still guides cacao ceremonies and meditation through allisongomer.com.
+- Partner and podcast co-host: Allison Gomer, Dan's wife, a Realtor and partner at ReAlto Partners at eXp Realty serving buyers and sellers in the Denver metro. Known for a calm, people-first approach and a focus on agent wellbeing and team culture.
 - Mission: positively impact as many lives as possible using the vehicle of real estate.
 - Vision: personal and financial freedom for every agent partner.
 - Core values: culture is our heartbeat; service is the path to success; resourcefulness and resiliency; integrity in all actions; community and dependability.
@@ -19,7 +19,7 @@ Key facts:
 ## Pages
 - [Home](https://www.realtopartners.com/): overview of ReAlto Partners, the eXp model, team life and the podcast
 - [Dan Gomer](https://www.realtopartners.com/dan-gomer.html): biography, book, speaking and values
-- [Allison Gomer](https://www.realtopartners.com/allison-gomer.html): Realtor and partner, podcast co-host, cacao ceremonies
+- [Allison Gomer](https://www.realtopartners.com/allison-gomer.html): Realtor and partner, podcast co-host
 - [Why ReAlto / Join the team](https://www.realtopartners.com/join-exp-realty-team.html): who thrives on the team, how eXp Realty works, local roots, agent FAQ
 - [The Resilient Real Estate Agent podcast](https://www.realtopartners.com/podcast.html): latest episodes, the 3R Framework, hosts and guest requests
 - [YouTube channel](https://www.youtube.com/@theresilientrealestateagent): The Resilient Real Estate Agent
@@ -27,7 +27,6 @@ Key facts:
 
 ## Optional
 - [Full text for LLMs](https://www.realtopartners.com/llms-full.txt)
-- [Allison Gomer's own website](https://www.allisongomer.com/)
 - [eXp Realty](https://www.exprealty.com/)
 
 # Frequently asked questions
@@ -72,22 +71,19 @@ I'm Full of It and So Are You uses humor and real-life stories to show how the s
 ## Allison Gomer
 
 ### Who is Allison Gomer?
-Allison Gomer is a Colorado Realtor with ReAlto Partners at eXp Realty, the wife and business partner of team leader Dan Gomer, and co-host of The Resilient Real Estate Agent podcast on YouTube. Before real estate she worked as a psychotherapist.
+Allison Gomer is a Colorado Realtor and partner at ReAlto Partners at eXp Realty, the wife of team leader Dan Gomer, and co-host of The Resilient Real Estate Agent podcast on YouTube.
 
 ### Can Allison help me buy or sell a home in Colorado?
-Yes. Allison helps buyers and sellers across the Denver metro area, including Highlands Ranch and Douglas County. Reach her through the contact page or call 303.261.5278.
+Yes. Allison helps buyers and sellers across the Denver metro area, including Highlands Ranch and Douglas County. Reach her through the form on this page or call 303.261.5278.
 
-### How does Allison's psychotherapy background help her clients?
-Buying or selling a home is one of the most stressful things people do. Allison's years as a therapist taught her to listen closely, stay calm under pressure and help people make clear decisions, which is exactly what a move requires.
+### What is it like to work with Allison?
+Calm, unhurried and honest. Allison listens first, keeps people steady when the stakes are high and helps families make clear decisions about where and how they want to live.
 
-### What is a cacao ceremony?
-A cacao ceremony is a guided ritual built around drinking ceremonial cacao, a minimally processed form of the cacao bean, with intention. Allison pairs it with breathwork and guided meditation so it becomes a calm, heart-centered space to set intentions and reflect.
+### What does Allison do at ReAlto Partners?
+Alongside her own clients, Allison partners with Dan on the people side of the organization: culture, connection and helping agents take care of themselves so they can stay in the business for the long run.
 
-### How long does one of Allison's cacao ceremonies last?
-Typically 60 to 90 minutes. Private and group ceremonies include an intention call beforehand. Booking is through allisongomer.com.
-
-### Is ceremonial cacao safe?
-Ceremonial cacao is food, not a psychedelic. It contains theobromine and a small amount of caffeine, which are mild stimulants. If you are pregnant, have a heart condition, or take antidepressants or other medications, check with your doctor before attending.
+### Is Allison on the podcast?
+Yes. Allison co-hosts The Resilient Real Estate Agent with Dan, bringing the human side of resilience to the 3R Framework.
 
 ## Joining ReAlto Partners at eXp Realty
 
@@ -115,7 +111,7 @@ No. It is a chance to connect and get a feel for who we are. There is no obligat
 The Resilient Real Estate Agent is a video podcast on YouTube hosted by Dan Gomer with co-host Allison Gomer. It is built on the 3R Framework of resiliency, resourcefulness and responsibility.
 
 ### Who hosts The Resilient Real Estate Agent?
-Dan Gomer, founder of ReAlto Partners at eXp Realty, author and former teacher, with his wife and partner Allison Gomer, a Realtor on the team and a former psychotherapist.
+Dan Gomer, founder of ReAlto Partners at eXp Realty, author and former teacher, with his wife and partner Allison Gomer, a Realtor on the team.
 
 ### Who is the podcast for?
 Real estate agents and team leaders who want to beat burnout, grow personally and build a business that lasts, plus anyone curious about the psychology of success.
@@ -125,11 +121,5 @@ On YouTube at @theresilientrealestateagent. Subscribe there to get new episodes.
 
 ### How can I be a guest?
 Use the guest and topic form on this page to pitch yourself, recommend a guest or suggest a topic.
-
-# Allison Gomer cacao and meditation services (allisongomer.com)
-- Cacao ceremony (individual): A private ceremony with an intention-setting call beforehand, a 90 minute in-person cacao ceremony and a follow-up session.
-- Cacao ceremony (duo): The same private ceremony experience shared by two people, such as partners, friends or family.
-- Group cacao ceremony: A ceremony for groups of three to ten people with an intention call beforehand and follow-up support.
-- Corporate and team ceremonies: Custom cacao and meditation experiences for teams, retreats and events.
 
 Last updated: 2026-10-20
