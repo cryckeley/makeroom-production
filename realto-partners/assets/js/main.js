@@ -97,6 +97,42 @@ const SITE = {
     }, { once: true });
   });
 
+  /* ---------- Hosts' head turn: plays on hover (desktop) or when scrolled into view (touch) ---------- */
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  doc.querySelectorAll("img[data-anim]").forEach((img) => {
+    if (reduceMotion) return;
+    const still = img.getAttribute("src");
+    const duration = Number(img.dataset.animMs) || 5000;
+    let blob = null, playing = false, timer = 0, url = "";
+    // A fresh object URL restarts the animation from frame one every time
+    const load = () => blob ? Promise.resolve(blob)
+      : fetch(img.dataset.anim).then((r) => r.ok ? r.blob() : null).then((b) => (blob = b)).catch(() => null);
+    const stop = () => { img.src = still; if (url) URL.revokeObjectURL(url); url = ""; playing = false; };
+    const play = () => {
+      if (playing || !img.isConnected) return;
+      playing = true;
+      load().then((b) => {
+        if (!playing) return;
+        url = b ? URL.createObjectURL(b) : "";
+        img.src = url || img.dataset.anim;
+        clearTimeout(timer);
+        timer = setTimeout(stop, duration);
+      });
+    };
+    const host = img.closest(".yt") || img;
+    if (window.matchMedia("(hover: hover)").matches) {
+      host.addEventListener("mouseenter", play);
+      host.addEventListener("focus", play);
+      load();
+    } else if ("IntersectionObserver" in window) {
+      let seen = false;
+      new IntersectionObserver((entries) => entries.forEach((e) => {
+        if (e.isIntersecting && !seen) { seen = true; play(); }
+        if (!e.isIntersecting) seen = false;
+      }), { threshold: 0.6 }).observe(host);
+    }
+  });
+
   /* ---------- Channel player: always shows the latest uploads ---------- */
   doc.querySelectorAll(".yt[data-list]").forEach((btn) => {
     btn.addEventListener("click", () => {
