@@ -938,3 +938,11 @@ body.lb-open { overflow: hidden; }
   .exp-head { flex-direction: column-reverse; align-items: flex-start; gap: 22px; }
   .exp-logo { width: 130px; }
 }
+
+/* Lede and fine print on every dark background (was only .dark) */
+:is(.dark, .dark-2, .hero-team, .podcast-feature, .site-footer) .lede { color: rgba(243, 245, 242, 0.86); }
+:is(.dark, .dark-2) .fineprint { color: rgba(243, 245, 242, 0.6); }
+:is(.dark, .dark-2) .checklist li, :is(.dark, .dark-2) .summary { color: rgba(243, 245, 242, 0.92); }
+/* Darker neutral for small print on light backgrounds (about 5.9:1 on ivory) */
+:root { --slate: #5b635e; }
+:is(.dark, .dark-2) .updated { color: rgba(243, 245, 242, 0.62); }
