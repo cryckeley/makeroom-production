@@ -11,13 +11,13 @@ const SITE = {
 
   // Links used by every button with a matching data-link attribute.
   links: {
-    youtube: "https://www.youtube.com/results?search_query=Dan+Gomer",
-    podcastYouTube: "https://www.youtube.com/results?search_query=Dan+Gomer",
-    podcastApple: "https://podcasts.apple.com/",
-    podcastSpotify: "https://open.spotify.com/",
+    // The Resilient Real Estate Agent: every YouTube and podcast button goes here
+    youtube: "https://www.youtube.com/@theresilientrealestateagent",
+    podcastYouTube: "https://www.youtube.com/@theresilientrealestateagent",
+    youtubeSubscribe: "https://www.youtube.com/@theresilientrealestateagent?sub_confirmation=1",
     instagram: "https://www.instagram.com/danshometeam/",
     facebook: "https://www.facebook.com/",
-    linkedin: "https://www.linkedin.com/",
+    linkedin: "https://www.linkedin.com/in/dan-gomer/",
     expJoin: "https://www.exprealty.com/",
   },
 };
@@ -64,6 +64,12 @@ const SITE = {
     img.addEventListener("error", mark);
   });
 
+  /* ---------- Optional images (e.g. the channel logo) disappear quietly if not uploaded yet ---------- */
+  doc.querySelectorAll("img[data-optional]").forEach((img) => {
+    if (img.complete && img.naturalWidth === 0) img.remove();
+    img.addEventListener("error", () => img.remove());
+  });
+
   /* ---------- Reveal on scroll ---------- */
   const revealEls = doc.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
@@ -85,6 +91,18 @@ const SITE = {
       const iframe = doc.createElement("iframe");
       iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
       iframe.title = btn.getAttribute("aria-label") || "YouTube video";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      btn.replaceChildren(iframe);
+    }, { once: true });
+  });
+
+  /* ---------- Channel player: always shows the latest uploads ---------- */
+  doc.querySelectorAll(".yt[data-list]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const iframe = doc.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/videoseries?list=${btn.dataset.list}&autoplay=1&rel=0`;
+      iframe.title = btn.getAttribute("aria-label") || "YouTube playlist";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
       btn.replaceChildren(iframe);

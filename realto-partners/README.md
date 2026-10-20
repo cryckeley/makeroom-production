@@ -6,9 +6,9 @@ Upload the contents of this folder to GoDaddy and it works.
 ```
 index.html                  Home: ReAlto overview, podcast feature, eXp model, team life, Allison, FAQ
 dan-gomer.html              Dan Gomer biography, book, speaking, values, FAQ
-allison-gomer.html          Allison Gomer: cacao ceremonies, meditation, Sacred Psychotherapy & Ceremony, FAQ, inquiry form
+allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, cacao ceremonies, FAQ, inquiry form
 join-exp-realty-team.html   Why ReAlto, how eXp Realty works, local roots, agent FAQ, agent inquiry form
-podcast.html                The Dan & Allison Gomer Podcast, alerts signup, guest form
+podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, 3R Framework, hosts, guest form
 contact.html                General contact form
 404.html                    Not found page (noindex)
 sitemap.xml                 For Google Search Console and Bing Webmaster Tools
@@ -36,8 +36,8 @@ originals are 10 to 20 MB each and should not be uploaded as is.
 | `allison.jpg` | `/Allison Gomer/about-allison.jpg` |
 | `allison-2.jpg` | `/Allison Gomer/allisong-18.jpg` (any shot from the Megan Sawaya business shoot works) |
 | `allison-cacao.jpg` | `/Allison Gomer/cerimonial-cacao-16x9.jpg` |
-| `allison-ceremony-group.jpg` | `/Allison Gomer/group-cacao.jpg` |
-| `allison-launch.jpg` | `/Allison Gomer/ana and allison cacao and cards launch ceremony.jpg` |
+| `dan-allison.jpg` | **Needed from Dan:** a photo of Dan and Allison together (portrait orientation, about 1600 x 2000) |
+| `resilient-logo.png` | **The Resilient Real Estate Agent** channel logo (square, at least 400px). Shows as a round badge on the podcast artwork; hidden until uploaded |
 | `team-capitol.png` | `/Realto Partners/team-capitoil.png` (also the default social share image) |
 | `team-a.jpg` | `/Realto Partners/Team-A.jpg` |
 | `team-j.jpg` | `/Realto Partners/Team-J.jpg` |
@@ -46,7 +46,11 @@ originals are 10 to 20 MB each and should not be uploaded as is.
 | `onboarding.jpg` | `/Realto Partners/onbording-plus.jpg` |
 | `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo Transparent.png` |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` |
-| `podcast-cover.jpg` | Podcast cover art, 1400 to 3000px square, once it exists |
+| `podcast-cover.jpg` | The Resilient Real Estate Agent cover or channel banner (used as the podcast page's social share image) |
+
+Every photo gets the same ReAlto color grade and brass edge automatically (in `styles.css`, "One consistent
+ReAlto photo grade"), so shots from different shoots look like one set. For the closest match, crop portraits
+to 4:5 and use photos with soft, warm light.
 
 ## 2. Turn on the forms
 
@@ -62,8 +66,11 @@ nothing is sent. Do not launch without setting the email.
 
 ## 3. Update links
 
-Also in `assets/js/main.js`, under `links`: YouTube channel, podcast on YouTube / Spotify /
-Apple, Instagram, Facebook and LinkedIn. Every button picks these up automatically.
+Also in `assets/js/main.js`, under `links`. Every YouTube, "Watch" and podcast button goes to
+The Resilient Real Estate Agent channel: https://www.youtube.com/@theresilientrealestateagent
+(the Subscribe buttons add `?sub_confirmation=1` so YouTube opens the subscribe prompt).
+The "Latest episodes" player embeds the channel's uploads playlist (`UUsfOEfe5zPbju0cti-AUzNQ`),
+so new episodes appear on the site automatically with no updates needed.
 
 ## 4. SEO and AI search: what's built in
 
@@ -100,11 +107,12 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 
 ## 6. Confirm with Dan and Allison before launch
 
-- Podcast name. The site calls it "The Dan & Allison Gomer Podcast" until there's a title.
-- The four "Coming soon" episode topics on `podcast.html` are suggestions.
-- Allison's page is built from her own site copy and 2023 offering notes: her psychotherapist title and
-  license status, the ceremony formats and the nine-session program. She should approve it. Prices are
-  left off on purpose and live on allisongomer.com.
+- The podcast copy uses the channel's own description (3R Framework: resiliency, resourcefulness,
+  responsibility). The one-line definitions of each R on `podcast.html` are written for the site; Dan
+  should check they match how he teaches it.
+- Allison's page now leads with her role as a Realtor and partner, mentions her psychotherapy background
+  as past experience, and keeps her cacao ceremonies as a secondary "beyond real estate" section linking
+  to allisongomer.com. She should approve it, and confirm she still offers ceremonies.
 - Dan's timeline (real estate since 2012, Your Castle Real Estate, eXp since 2022) comes from his LinkedIn.
 - Location is listed as Highlands Ranch with service areas around it. Phone 303.261.5278 is from Dan's
   earlier website copy.
