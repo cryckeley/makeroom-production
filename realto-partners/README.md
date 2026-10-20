@@ -37,6 +37,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 | `dan-candid.jpg` | `/Acendant Title/Pen Bag/Dan Pic.jpg` | Gallery, photo strip |
 | `allison.jpg`, `allison-2.jpg` (1600x2000) | Built from `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg`: background removed with a local AI model, braces removed with Kling (mouth area only, blended back), and placed into Colorado foothills backdrops generated with Kling (no people in the backdrops). Her face is otherwise unedited. | Allison portraits, host cards, podcast art, photo strip |
 | `podcast-allison.jpg` | Same Allison cutout and backdrop as `allison.jpg`, composed in a tall 1:2 frame so she matches Dan's size and eye line in the podcast art | Podcast art (Home and Podcast pages) |
+| `latest-episodes.jpg`, `video-burnout-purpose.jpg`, `video-sphere-marketing.jpg` | Designed posters built from the Dan and Allison cutouts, the Kling foothills backdrop and the site fonts | Video players on Home and Podcast (shown instead of YouTube's own thumbnails) |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `exp-logo-white.png` | `/Realto Partners/Marketing Info/exp-inverted-logo.png` (official white eXp Realty logo) | Beside the eXp sections on Home and Why ReAlto |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
