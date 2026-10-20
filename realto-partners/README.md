@@ -29,7 +29,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 |---|---|---|
 | `team-j.jpg` (2200px) | `/Realto Partners/Team-J.jpg` | Homepage hero (slide 1), photo strip |
 | `team-a.jpg` (1800px) | `/Realto Partners/Team-A.jpg` | Hero slide 2, gallery |
-| `team-capitol.jpg` | `/Realto Partners/team-capitoil.png` (frame line trimmed) | Hero slide 3, gallery, default share image |
+| `team-capitol.jpg` | `/Realto Partners/team-capitoil.png` (designer frame cropped off) | Hero slide 3, gallery, default share image |
 | `why.jpg` | Portrait crop of `Team-A.jpg` | Why ReAlto page hero |
 | `dan-about.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Website/Images/Dan-sideshot-closeup.png` | Dan portrait, founder chip, host avatar |
 | `dan-speaking.jpg` | Portrait crop of `.../DG-Website/Images/Dan-chair-den.jpg` | Meet Dan, podcast art, host card |
@@ -37,6 +37,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 | `dan-candid.jpg` | `/Acendant Title/Pen Bag/Dan Pic.jpg` | Gallery, photo strip |
 | `allison.jpg`, `allison-2.jpg` | Built from `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg`: background removed with a local AI model, braces removed with Kling (mouth area only, blended back), and placed into Colorado foothills backdrops generated with Kling (no people in the backdrops). Her face is otherwise unedited. | Allison portraits, host cards, podcast art, photo strip |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
+| `exp-logo-white.png` | `/Realto Partners/Marketing Info/exp-inverted-logo.png` (official white eXp Realty logo) | Beside the eXp sections on Home and Why ReAlto |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
 | `resilient-logo.png`, `podcast-cover.jpg` | The Resilient Real Estate Agent YouTube channel logo and banner | Podcast badge and share image |
 

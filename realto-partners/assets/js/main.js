@@ -109,6 +109,89 @@ const SITE = {
     }, { once: true });
   });
 
+  /* ---------- Lightbox for the photo carousel ---------- */
+  const lbTriggers = [...doc.querySelectorAll("[data-lb-group]:not([aria-hidden])")];
+  if (lbTriggers.length) {
+    const items = lbTriggers.map((b) => ({ src: b.dataset.lbSrc, caption: b.dataset.lbCaption }));
+    const icon = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="${d}"/></svg>`;
+    const box = doc.createElement("div");
+    box.className = "lightbox";
+    box.hidden = true;
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Team photos");
+    box.innerHTML = `
+      <figure class="lb-figure"><img alt=""><figcaption class="lb-caption"><span class="lb-text"></span><span class="lb-count"></span></figcaption></figure>
+      <button type="button" class="lb-btn lb-prev" aria-label="Previous photo">${icon("M15 5l-7 7 7 7")}</button>
+      <button type="button" class="lb-btn lb-next" aria-label="Next photo">${icon("M9 5l7 7-7 7")}</button>
+      <button type="button" class="lb-btn lb-close" aria-label="Close">${icon("M6 6l12 12M18 6L6 18")}</button>`;
+    doc.body.appendChild(box);
+    const img = box.querySelector("img");
+    const text = box.querySelector(".lb-text");
+    const count = box.querySelector(".lb-count");
+    const strip = doc.querySelector(".pack-strip");
+    let index = 0;
+    let lastFocus = null;
+
+    const render = () => {
+      const it = items[index];
+      img.classList.add("loading");
+      img.onload = () => img.classList.remove("loading");
+      img.src = it.src;
+      img.alt = it.caption;
+      text.textContent = it.caption;
+      count.textContent = `${index + 1} of ${items.length}`;
+      // warm the neighbours so back/forward feels instant
+      [index + 1, index - 1].forEach((n) => { const p = new Image(); p.src = items[(n + items.length) % items.length].src; });
+    };
+    const go = (step) => { index = (index + step + items.length) % items.length; render(); };
+    const open = (i) => {
+      index = i;
+      lastFocus = doc.activeElement;
+      render();
+      box.hidden = false;
+      requestAnimationFrame(() => box.classList.add("open"));
+      doc.body.classList.add("lb-open");
+      if (strip) strip.classList.add("paused");
+      box.querySelector(".lb-next").focus();
+    };
+    const close = () => {
+      box.classList.remove("open");
+      doc.body.classList.remove("lb-open");
+      if (strip) strip.classList.remove("paused");
+      setTimeout(() => { box.hidden = true; }, 200);
+      if (lastFocus) lastFocus.focus();
+    };
+
+    doc.querySelectorAll("[data-lb-group]").forEach((b) =>
+      b.addEventListener("click", () => open(Number(b.dataset.lbIndex) || 0)));
+    box.querySelector(".lb-prev").addEventListener("click", () => go(-1));
+    box.querySelector(".lb-next").addEventListener("click", () => go(1));
+    box.querySelector(".lb-close").addEventListener("click", close);
+    box.addEventListener("click", (e) => { if (e.target === box) close(); });
+    doc.addEventListener("keydown", (e) => {
+      if (box.hidden) return;
+      if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+      else if (e.key === "Escape") close();
+      else if (e.key === "Tab") {
+        // keep keyboard focus inside the lightbox
+        const f = [...box.querySelectorAll("button")];
+        const i = f.indexOf(doc.activeElement);
+        e.preventDefault();
+        f[(i + (e.shiftKey ? -1 : 1) + f.length) % f.length].focus();
+      }
+    });
+    let touchX = null;
+    box.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener("touchend", (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      touchX = null;
+    });
+  }
+
   /* ---------- Forms ---------- */
   const configured = !/REPLACE_WITH_YOUR_EMAIL/.test(SITE.formEndpoint);
   if (!configured) {
