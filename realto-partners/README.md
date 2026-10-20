@@ -35,7 +35,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 | `dan-speaking.jpg` | Portrait crop of `.../DG-Website/Images/Dan-chair-den.jpg` | Meet Dan, podcast art, host card |
 | `dan-wide.jpg` | `.../DG-Website/Images/Dan-chair-den.jpg` | Gallery |
 | `dan-candid.jpg` | `/Acendant Title/Pen Bag/Dan Pic.jpg` | Gallery, photo strip |
-| `allison.jpg`, `allison-2.jpg` | Business headshots made from `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg`: background removed with an AI model and placed on a ReAlto green studio backdrop (`allison.jpg`) and a light gray studio backdrop (`allison-2.jpg`), cropped head and shoulders. Her face is unedited. | Allison portraits, host cards, podcast art, photo strip |
+| `allison.jpg`, `allison-2.jpg` | Built from `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg`: background removed with a local AI model, braces removed with Kling (mouth area only, blended back), and placed into Colorado foothills backdrops generated with Kling (no people in the backdrops). Her face is otherwise unedited. | Allison portraits, host cards, podcast art, photo strip |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
 | `resilient-logo.png`, `podcast-cover.jpg` | The Resilient Real Estate Agent YouTube channel logo and banner | Podcast badge and share image |
