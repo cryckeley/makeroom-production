@@ -29,7 +29,7 @@ All photos are already in `images/`, cropped and sized for the web (about 3 MB t
 |---|---|---|
 | `team-j.jpg` (2200px) | `/Realto Partners/Team-J.jpg` | Homepage hero (slide 1), photo strip |
 | `team-a.jpg` (1800px) | `/Realto Partners/Team-A.jpg` | Hero slide 2, gallery |
-| `team-capitol.jpg` | `/Realto Partners/team-capitoil.png` (designer frame cropped off) | Hero slide 3, gallery, default share image |
+| `team-capitol.jpg` | `/Realto Partners/team-capitoil.png` (designer frame cropped off) | Hero slide 3, "At a glance" on Home, gallery, default share image |
 | `why.jpg` | Portrait crop of `Team-A.jpg` | Why ReAlto page hero |
 | `dan-about.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Website/Images/Dan-sideshot-closeup.png`, background removed and placed in the same Kling foothills backdrop as `allison-2.jpg` (1600x2000) | Dan portrait, founder chip, host avatar, photo strip |
 | `dan-speaking.jpg` | `.../DG-Website/Images/Dan-chair-den.jpg`, background removed and placed in the same Kling backdrop as `allison.jpg` (1600x2000). His face is unedited. | Meet Dan, podcast art, host card, photo strip |

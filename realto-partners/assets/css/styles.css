@@ -955,3 +955,10 @@ body.lb-open { overflow: hidden; }
 .podcast-art .split .photo:nth-child(1):hover img { object-position: 55% 50%; transform: translateY(7%) scale(1.15); }
 .podcast-art .split .photo:nth-child(2) img,
 .podcast-art .split .photo:nth-child(2):hover img { object-position: 50% 50%; transform: none; }
+
+/* Home "At a glance": team photo beside the heading */
+.glance-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr); gap: clamp(32px, 5vw, 72px); align-items: center; margin-bottom: clamp(40px, 6vw, 72px); }
+.glance-head .section-head { margin-bottom: 0; }
+.glance-photo { margin: 0; }
+.glance-photo .photo { aspect-ratio: 3 / 2; border-radius: var(--radius-lg); }
+@media (max-width: 860px) { .glance-head { grid-template-columns: 1fr; } }
