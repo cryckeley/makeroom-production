@@ -814,3 +814,22 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
   .hero-slides img:first-child { opacity: 1; }
   .pack-track { animation: none; }
 }
+
+/* Official ReAlto logo in header and footer */
+.brand img { display: block; height: 40px; width: auto; }
+.site-header.scrolled .brand img { height: 34px; }
+.footer-top .brand img { height: 46px; }
+@media (max-width: 560px) { .brand img { height: 32px; } }
+
+/* Three-slide team hero timing */
+.hero-slides img { animation-duration: 21s; }
+.hero-slides img:nth-child(1) { animation-delay: -1.05s; }
+.hero-slides img:nth-child(2) { animation-delay: 5.95s; }
+.hero-slides img:nth-child(3) { animation-delay: 12.95s; }
+@keyframes heroSlide {
+  0%   { opacity: 0; transform: scale(1.02); }
+  5%   { opacity: 1; }
+  33%  { opacity: 1; }
+  40%  { opacity: 0; transform: scale(1.1); }
+  100% { opacity: 0; transform: scale(1.1); }
+}

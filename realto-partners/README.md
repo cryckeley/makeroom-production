@@ -21,31 +21,31 @@ assets/favicon.svg
 images/                     <- drop the photos here (see list below)
 ```
 
-## 1. Add the photos
+## 1. Photos
 
-Pages already point at these filenames. Until a photo is in place the page shows a styled
-placeholder. Copy each Dropbox file into `images/` and rename it to the name on the left.
-Export large photos at about 2000px on the long side (JPG, quality ~80). The Megan Sawaya
-originals are 10 to 20 MB each and should not be uploaded as is.
+All photos are already in `images/`, cropped and sized for the web (about 3 MB total) from the originals in Dropbox:
 
-| Save as `images/...` | Dropbox source |
-|---|---|
-| `dan-hero.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Website/Images/Dan-chair-den.jpg` |
-| `dan-speaking.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Website/Images/Dan-speaking-wh.jpg` |
-| `dan-about.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Public Persona/DG-Projects/website assets/Dan-about.jpg` |
-| `allison.jpg` | `/Allison Gomer/about-allison.jpg` |
-| `allison-2.jpg` | `/Allison Gomer/allisong-18.jpg` (any shot from the Megan Sawaya business shoot works) |
-| `dan-allison.jpg` | **Needed from Dan:** a photo of Dan and Allison together (portrait orientation, about 1600 x 2000) |
-| `resilient-logo.png` | **The Resilient Real Estate Agent** channel logo (square, at least 400px). Shows as a round badge on the podcast artwork; hidden until uploaded |
-| `team-capitol.png` | `/Realto Partners/team-capitoil.png` (also the default social share image) |
-| `team-a.jpg` | `/Realto Partners/Team-A.jpg` |
-| `team-j.jpg` | `/Realto Partners/Team-J.jpg` |
-| `welcome.jpg` | `/Realto Partners/welcome.jpg` |
-| `why.jpg` | `/Realto Partners/whyhole.jpg` |
-| `onboarding.jpg` | `/Realto Partners/onbording-plus.jpg` |
-| `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo Transparent.png` |
-| `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` |
-| `podcast-cover.jpg` | The Resilient Real Estate Agent cover or channel banner (used as the podcast page's social share image) |
+| File | Source in Dropbox | Used for |
+|---|---|---|
+| `team-j.jpg` (2200px) | `/Realto Partners/Team-J.jpg` | Homepage hero (slide 1), photo strip |
+| `team-a.jpg` (1800px) | `/Realto Partners/Team-A.jpg` | Hero slide 2, gallery |
+| `team-capitol.jpg` | `/Realto Partners/team-capitoil.png` (frame line trimmed) | Hero slide 3, gallery, default share image |
+| `why.jpg` | Portrait crop of `Team-A.jpg` | Why ReAlto page hero |
+| `dan-about.jpg` | `/_CW Steal/Dan Gomer Public Speaking/DG-Website/Images/Dan-sideshot-closeup.png` | Dan portrait, founder chip, host avatar |
+| `dan-speaking.jpg` | Portrait crop of `.../DG-Website/Images/Dan-chair-den.jpg` | Meet Dan, podcast art, host card |
+| `dan-wide.jpg` | `.../DG-Website/Images/Dan-chair-den.jpg` | Gallery |
+| `dan-candid.jpg` | `/Acendant Title/Pen Bag/Dan Pic.jpg` | Gallery, photo strip |
+| `allison.jpg`, `allison-2.jpg` | Tight crops of `/Allison Gomer/Megan Sawaya Photography/.../allisong-32.jpg` and `allisong-4.jpg` | Allison portraits, podcast art |
+| `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
+| `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
+| `resilient-logo.png`, `podcast-cover.jpg` | The Resilient Real Estate Agent YouTube channel logo and banner | Podcast badge and share image |
+
+Not used on purpose: `Dan-speaking-wh.jpg` (has Shutterstock watermarks), `whyhole.jpg` and
+`onbording-plus.jpg` (old graphics with text), `welcome.jpg` (video still).
+
+Allison's only professional photos are from her former ceremony business shoot, so they are cropped tight to
+her face. A current Realtor headshot of Allison, and a photo of Dan and Allison together, would be the best
+upgrades: replace `allison.jpg` / `allison-2.jpg` with the same names.
 
 Every photo gets the same ReAlto color grade and brass edge automatically (in `styles.css`, "One consistent
 ReAlto photo grade"), so shots from different shoots look like one set. For the closest match, crop portraits
