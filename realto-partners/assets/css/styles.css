@@ -946,3 +946,12 @@ body.lb-open { overflow: hidden; }
 /* Darker neutral for small print on light backgrounds (about 5.9:1 on ivory) */
 :root { --slate: #5b635e; }
 :is(.dark, .dark-2) .updated { color: rgba(243, 245, 242, 0.62); }
+
+/* Podcast art: center Allison in her half and line both hosts' eyes up at the same height */
+.podcast-art .split { overflow: hidden; }
+.podcast-art .split .photo { position: relative; min-width: 0; overflow: hidden; }
+.podcast-art .split .photo img { position: absolute; inset: 0; width: 100%; height: 100%; transform-origin: 50% 50%; }
+.podcast-art .split .photo:nth-child(1) img,
+.podcast-art .split .photo:nth-child(1):hover img { object-position: 55% 50%; transform: translateY(7%) scale(1.15); }
+.podcast-art .split .photo:nth-child(2) img,
+.podcast-art .split .photo:nth-child(2):hover img { object-position: 35% 50%; transform: translateY(-8.8%) scale(1.2); }
