@@ -852,3 +852,33 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
 .host .photo.monogram, .photo.monogram.host-mono { aspect-ratio: 1; padding: 0; gap: 0; border-radius: 50%; }
 .host .photo.monogram .mono-initials { font-size: 1rem; padding: 0; border: 0; }
 .host .photo.monogram .mono-name { display: none; }
+
+/* ==========================================================================
+   Contrast pass: bold accent words and readable greens on every background
+   (WCAG AA: light green on charcoal is about 9:1, deep green on ivory about 6.5:1)
+   ========================================================================== */
+:root {
+  --green-hi: #8fe59b;    /* accent text on dark backgrounds */
+  --green-ink: #0d6a19;   /* accent text on light backgrounds */
+  --ember-soft: #8fe59b;
+}
+/* Italic accent words: bold, deep green on light sections */
+h1 em, h2 em, h3 em, .h2 em, .h3 em { font-weight: 650; color: var(--green-ink); }
+.signature { font-weight: 600; color: var(--green-ink); }
+/* ...and light green on every dark section */
+:is(.dark, .dark-2, .podcast-feature, .hero-team, .site-footer) :is(h1, h2, h3, .h2, .h3) em,
+.podcast-art .overlay strong em, .yt-cover strong em { color: var(--green-hi); }
+
+/* Small labels and eyebrows */
+.eyebrow { color: var(--green-ink); font-weight: 700; }
+:is(.dark, .dark-2, .podcast-feature, .hero-team) .eyebrow, .eyebrow.on-dark { color: var(--green-hi); }
+.h1-kicker, .podcast-feature .h1-kicker { color: var(--green-hi); font-weight: 700; }
+.hero-meta b, .pillar .num, .footer-top .h5, .contact-list b, .dark .facts dt, .episode .ep,
+.big-quote cite, .podcast-art .overlay small, .yt-cover small { font-weight: 700; }
+.hero-meta b, .pillar .num, .footer-top .h5, .contact-list b, .dark .facts dt,
+.podcast-art .overlay small, .yt-cover small, .on-air { color: var(--green-hi); }
+.big-quote cite, .rhythm-item .when, .host-card .role, .value .n, .facts dt, .t-card cite { color: var(--green-ink); font-weight: 700; }
+.dark .big-quote cite { color: var(--green-hi); }
+.crumbs a:hover, .contact-list a:hover, .dark .link-arrow:hover { color: var(--green-hi); }
+.marquee span::after { color: var(--green-hi); }
+.on-air { border-color: rgba(143, 229, 155, 0.5); }
