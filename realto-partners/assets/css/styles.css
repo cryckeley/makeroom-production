@@ -962,3 +962,19 @@ body.lb-open { overflow: hidden; }
 .glance-photo { margin: 0; }
 .glance-photo .photo { aspect-ratio: 3 / 2; border-radius: var(--radius-lg); }
 @media (max-width: 860px) { .glance-head { grid-template-columns: 1fr; } }
+
+/* Team rhythm flywheel (Home, "Life on the team") */
+.flywheel { margin: 0; justify-self: center; width: 100%; max-width: 460px; }
+.flywheel svg { display: block; width: 100%; height: auto; overflow: visible; }
+.flywheel .fw-track { fill: none; stroke: rgba(13, 106, 25, 0.12); stroke-width: 14; }
+.flywheel .fw-arcs path { fill: none; stroke: var(--green-ink); stroke-width: 2.5; stroke-linecap: round; }
+.flywheel marker path { fill: var(--green-ink); }
+.flywheel .fw-nodes circle { fill: var(--brass); stroke: var(--ivory); stroke-width: 4; }
+.flywheel .fw-orbit { transform-box: view-box; transform-origin: 260px 200px; animation: fw-spin 14s linear infinite; }
+.flywheel .fw-orbit circle { fill: var(--brass); opacity: 0.55; }
+.flywheel .fw-word { font: 700 22px var(--f-display); fill: var(--ink); }
+.flywheel .fw-sub { font: 500 14px var(--f-body); fill: var(--slate); }
+.flywheel .fw-center { font: italic 700 30px var(--f-display); fill: var(--green-ink); }
+.flywheel .fw-center-sub { font: 600 11px var(--f-mark); letter-spacing: 0.14em; text-transform: uppercase; fill: var(--slate); }
+@keyframes fw-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .flywheel .fw-orbit { animation: none; } }
