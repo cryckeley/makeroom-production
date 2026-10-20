@@ -645,3 +645,101 @@ button[disabled] { opacity: 0.6; pointer-events: none; }
 /* 404 / thank-you */
 .center-screen { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 120px var(--gutter) 60px; }
 .center-screen .big { font: 700 clamp(6rem, 22vw, 14rem)/0.9 var(--f-mark); color: var(--brass); opacity: 0.9; }
+
+/* ==========================================================================
+   SEO / content additions
+   ========================================================================== */
+
+/* Keyword-bearing kicker that lives inside each page's single H1 */
+.h1-kicker {
+  display: block;
+  font: 600 0.8rem/1.5 var(--f-mark);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 22px;
+  max-width: 60ch;
+}
+.light-hero .h1-kicker { color: var(--brass-deep); }
+.podcast-feature .h1-kicker { color: var(--ember-soft); }
+.allison-hero .h1-kicker { color: var(--clay-soft); }
+
+/* Breadcrumbs */
+.crumbs { font-size: 0.82rem; margin-bottom: 26px; color: rgba(245,240,230,0.55); }
+.crumbs ol { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.crumbs li + li::before { content: "/"; margin-right: 8px; opacity: 0.5; }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--brass); }
+
+/* Answer-first summary + key facts (written for people, readable by AI) */
+.summary {
+  font-family: var(--f-display); font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.5;
+  max-width: 62ch; margin: 0;
+}
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); border-radius: var(--radius); overflow: hidden; margin: 0; }
+.facts div { background: var(--ivory); padding: 20px 22px; }
+.paper .facts div { background: var(--paper); }
+.facts dt { font: 600 0.72rem/1.3 var(--f-mark); letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass-deep); margin-bottom: 6px; }
+.facts dd { margin: 0; font-weight: 600; line-height: 1.45; }
+.dark .facts { background: var(--line-dark); border-color: var(--line-dark); }
+.dark .facts div { background: var(--ink); }
+.dark .facts dt { color: var(--brass); }
+
+.updated { font-size: 0.8rem; color: var(--slate); margin-top: 18px; }
+.dark .updated { color: rgba(245,240,230,0.45); }
+
+/* Service areas */
+.areas { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 24px 0 0; }
+.areas li { padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line-dark); font-weight: 600; font-size: 0.9rem; }
+.paper .areas li, .areas.on-light li { border-color: var(--line-light); background: rgba(255,255,255,0.45); }
+
+/* Allison: warmer cacao palette */
+:root { --cacao: #3b2620; --cacao-2: #2a1b17; --clay: #b9785a; --clay-soft: #e3a98c; --sage: #8fa38a; }
+.allison-hero { background: radial-gradient(90% 70% at 85% 10%, rgba(185,120,90,0.35), transparent 60%), linear-gradient(160deg, var(--cacao) 0%, var(--cacao-2) 70%); color: var(--ivory); }
+.allison-hero h1 em, .cacao h2 em { color: var(--clay-soft); }
+.cacao { background: var(--cacao-2); color: var(--ivory); }
+.cacao .eyebrow { color: var(--clay-soft); }
+.cacao .lede { color: rgba(245,240,230,0.75); }
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.steps li { counter-increment: s; border-top: 1px solid rgba(227,169,140,0.4); padding-top: 18px; }
+.steps li::before { content: "0" counter(s); display: block; font: 600 0.8rem/1 var(--f-mark); letter-spacing: 0.2em; color: var(--clay-soft); margin-bottom: 12px; }
+.steps h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.steps p { font-size: 0.93rem; color: rgba(245,240,230,0.7); margin: 0; }
+@media (max-width: 960px) { .steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+.offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.offer { border: 1px solid var(--line-light); border-radius: var(--radius); padding: 30px; background: rgba(255,255,255,0.5); display: flex; flex-direction: column; gap: 10px; }
+.offer .tag { font: 600 0.72rem/1 var(--f-mark); letter-spacing: 0.2em; text-transform: uppercase; color: var(--clay); }
+.offer h3 { margin: 4px 0 6px; }
+.offer p { color: var(--text-soft); font-size: 0.97rem; margin: 0; }
+.offer ul { margin: 6px 0 0; padding-left: 18px; color: var(--text-soft); font-size: 0.93rem; }
+@media (max-width: 900px) { .offer-grid { grid-template-columns: 1fr; } }
+
+.btn-clay { --bg: var(--clay); --fg: #fff; }
+.btn-clay:hover { --bg: #c88a6c; }
+.note { font-size: 0.85rem; color: var(--slate); border-left: 2px solid var(--clay); padding-left: 14px; margin-top: 24px; max-width: 70ch; }
+
+/* Allison teaser on home */
+.allison-teaser { background: linear-gradient(140deg, var(--cacao) 0%, var(--cacao-2) 100%); color: var(--ivory); }
+.allison-teaser .eyebrow { color: var(--clay-soft); }
+.allison-teaser h2 em { color: var(--clay-soft); }
+.allison-teaser .lede { color: rgba(245,240,230,0.78); }
+
+/* Nav fits six items: collapse a little earlier */
+@media (max-width: 1060px) and (min-width: 921px) { .nav { gap: 20px; } .nav a { font-size: 0.88rem; } }
+
+/* Visual heading sizes decoupled from heading level (keeps the outline semantic) */
+.h2 { font-family: var(--f-display); font-weight: 400; line-height: 1.05; font-size: clamp(2.1rem, 4.6vw, 3.7rem); }
+.h3 { font-family: var(--f-display); font-weight: 400; line-height: 1.15; font-size: clamp(1.4rem, 2.2vw, 1.85rem); margin: 0 0 0.5em; }
+.h4 { font-family: var(--f-display); font-weight: 500; line-height: 1.25; font-size: 1.2rem; margin: 0 0 0.3em; }
+.footer-top .h5 { font: 600 0.72rem/1 var(--f-mark); letter-spacing: 0.24em; text-transform: uppercase; color: var(--brass); margin: 6px 0 18px; }
+.site-footer address a { text-decoration: none; }
+.site-footer address a:hover { color: var(--ivory); }
+.field .label { display: block; font-weight: 700; font-size: 0.82rem; margin-bottom: 7px; letter-spacing: 0.02em; }
+.faq summary h3 { font-weight: 400; }
+.cacao .photo { aspect-ratio: 4 / 3; }
+.allison-hero .photo { aspect-ratio: 4 / 5; }
+
+@media (max-width: 860px) { .facts { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .facts { grid-template-columns: 1fr; } }

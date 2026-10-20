@@ -14,3 +14,10 @@ DirectoryIndex index.html
   ExpiresByType text/css "access plus 1 week"
   ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
+
+# Old page names from the first draft
+Redirect 301 /about.html /dan-gomer.html
+Redirect 301 /join.html /join-exp-realty-team.html
+
+# Serve llms.txt as plain UTF-8 text
+AddType "text/plain; charset=utf-8" .txt

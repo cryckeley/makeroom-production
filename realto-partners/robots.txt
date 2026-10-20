@@ -1,0 +1,26 @@
+# ReAlto Partners: search engines and AI assistants are welcome.
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# AI crawlers, explicitly allowed so assistants can cite this site
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.realtopartners.com/sitemap.xml
