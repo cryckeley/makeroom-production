@@ -15,6 +15,8 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
 - Allison: leans slightly toward the camera, tilts her head to one side, smiles, then eases back.
 - When Dan and Allison appear together (side by side or in two halves of one graphic), they turn
   toward each other: he looks at her, she looks at him. Alone, each turns toward the camera.
+- No excessive blinking: Dan gets one wink and otherwise keeps his eyes open; Allison does not
+  blink. Say this in every prompt ("Only one wink, no other blinking" / "No blinking, eyes stay open").
 - Natural and gentle, clearly visible. Camera locked. Background, clothing and the green-tinted
   black and white grade unchanged.
 - Starts and ends on the exact still, so the loop and the still/animation swap are invisible.
@@ -33,7 +35,7 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
      > motion. The man [position], looking [direction], gives a quick playful wink, then turns his
      > head toward the camera by about 20 degrees with a warm smile, holds for a moment, then
      > slowly turns back. [The woman ... leans slightly closer toward the camera, tilts her head to
-     > one side and smiles warmly, then eases back.] No talking, no hand movement, background
+     > one side and smiles warmly, then eases back.] Only one wink, no other blinking. No talking, no hand movement, background
      > completely still. Faces, hair, clothing and the green-tinted black and white grade stay the
      > same. The last frame matches the first frame.
    - Download `urlWithoutWatermark` (never the watermarked url).
