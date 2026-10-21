@@ -99,8 +99,9 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 
 ## 5. After launch (do these once)
 
-1. **Domain (confirmed).** All canonical URLs, the sitemap and the schema use `https://www.realtopartners.com/`.
-   Point the domain at the GoDaddy hosting and make `www` the main address.
+1. **Domain (confirmed).** The site lives on the naked domain `https://realtopartners.com/` (no www). All canonical URLs,
+   the sitemap and the schema use it. DNS already forwards www to the naked domain, and `.htaccess` also
+   301-redirects www to `https://realtopartners.com` as a backup. Turn on HTTPS for the naked domain in GoDaddy.
 2. **Google Search Console and Bing Webmaster Tools.** Verify the site and submit `sitemap.xml`.
 3. **Google Business Profile.** Create or claim one for ReAlto Partners as a service-area business
    (hide the street address, set service areas to Denver metro, Highlands Ranch, Douglas County and

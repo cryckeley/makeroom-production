@@ -17,16 +17,16 @@ Key facts:
 - eXp Realty programs (revenue share, stock awards, splits and caps) are set by eXp Realty and change over time; earnings are not guaranteed.
 
 ## Pages
-- [Home](https://www.realtopartners.com/): overview of ReAlto Partners, the eXp model, team life and the podcast
-- [Dan Gomer](https://www.realtopartners.com/dan-gomer.html): biography, book, speaking and values
-- [Allison Gomer](https://www.realtopartners.com/allison-gomer.html): Co-founder and Realtor, podcast co-host
-- [Why ReAlto / Join the team](https://www.realtopartners.com/join-exp-realty-team.html): who thrives on the team, how eXp Realty works, local roots, agent FAQ
-- [The Resilient Real Estate Agent podcast](https://www.realtopartners.com/podcast.html): latest episodes, the 3R Framework, hosts and guest requests
+- [Home](https://realtopartners.com/): overview of ReAlto Partners, the eXp model, team life and the podcast
+- [Dan Gomer](https://realtopartners.com/dan-gomer.html): biography, book, speaking and values
+- [Allison Gomer](https://realtopartners.com/allison-gomer.html): Co-founder and Realtor, podcast co-host
+- [Why ReAlto / Join the team](https://realtopartners.com/join-exp-realty-team.html): who thrives on the team, how eXp Realty works, local roots, agent FAQ
+- [The Resilient Real Estate Agent podcast](https://realtopartners.com/podcast.html): latest episodes, the 3R Framework, hosts and guest requests
 - [YouTube channel](https://www.youtube.com/@theresilientrealestateagent): The Resilient Real Estate Agent
-- [Contact](https://www.realtopartners.com/contact.html): phone and contact form
+- [Contact](https://realtopartners.com/contact.html): phone and contact form
 
 ## Optional
-- [Full text for LLMs](https://www.realtopartners.com/llms-full.txt)
+- [Full text for LLMs](https://realtopartners.com/llms-full.txt)
 - [eXp Realty](https://www.exprealty.com/)
 
 # Frequently asked questions

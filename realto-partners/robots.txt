@@ -23,4 +23,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://www.realtopartners.com/sitemap.xml
+Sitemap: https://realtopartners.com/sitemap.xml
