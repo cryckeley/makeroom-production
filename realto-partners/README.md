@@ -99,8 +99,8 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 
 ## 5. After launch (do these once)
 
-1. **Domain.** All canonical URLs, the sitemap and the schema assume `https://www.realtopartners.com/`.
-   If the live domain is different, search and replace it across every file.
+1. **Domain (confirmed).** All canonical URLs, the sitemap and the schema use `https://www.realtopartners.com/`.
+   Point the domain at the GoDaddy hosting and make `www` the main address.
 2. **Google Search Console and Bing Webmaster Tools.** Verify the site and submit `sitemap.xml`.
 3. **Google Business Profile.** Create or claim one for ReAlto Partners as a service-area business
    (hide the street address, set service areas to Denver metro, Highlands Ranch, Douglas County and
