@@ -22,6 +22,8 @@ ap.add_argument("--keep-left", type=float, default=0.0)
 ap.add_argument("--width", type=int, default=1600)
 ap.add_argument("--fps", type=int, default=15)
 ap.add_argument("--quality", type=int, default=68)
+ap.add_argument("--small", action="store_true",
+                help="write only the phone version, OUT_NAME-turn-sm.webp (use data-anim-sm); keeps the existing still")
 a = ap.parse_args()
 
 poster = Image.open(a.poster).convert("RGB")
@@ -43,9 +45,11 @@ with tempfile.TemporaryDirectory() as td:
         F = np.asarray(Image.open(f).convert("RGB")).astype(np.float32)
         Image.fromarray((F * M + P * (1 - M)).clip(0, 255).astype(np.uint8)).save(f)
     # Still = first composited frame, so swapping still <-> animation is invisible
-    Image.open(frames[0]).save(os.path.join(ROOT, f"{a.name}.jpg"), quality=88, optimize=True, progressive=True)
+    if not a.small:
+        Image.open(frames[0]).save(os.path.join(ROOT, f"{a.name}.jpg"), quality=88, optimize=True, progressive=True)
+    out = f"{a.name}-turn-sm.webp" if a.small else f"{a.name}-turn.webp"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(a.fps), "-i", f"{td}/f_%04d.png",
                     "-c:v", "libwebp", "-lossless", "0", "-q:v", str(a.quality), "-compression_level", "6",
-                    "-preset", "photo", "-loop", "0", os.path.join(ROOT, f"{a.name}-turn.webp")], check=True)
+                    "-preset", "photo", "-loop", "0", os.path.join(ROOT, out)], check=True)
     dur = round(len(frames) / a.fps * 1000)
-print(f"wrote images/{a.name}.jpg and images/{a.name}-turn.webp  ({len(frames)} frames, data-anim-ms=\"{dur}\")")
+print(f"wrote images/{out}" + ("" if a.small else f" and images/{a.name}.jpg") + f"  ({len(frames)} frames, data-anim-ms=\"{dur}\")")

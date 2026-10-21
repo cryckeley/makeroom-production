@@ -23,7 +23,7 @@ images/                     <- drop the photos here (see list below)
 
 ## 1. Photos
 
-All photos are already in `images/`, cropped and sized for the web (about 3 MB total) from the originals in Dropbox:
+All photos are already in `images/`, cropped and sized for the web from the originals in Dropbox. Each large photo also has `-480.jpg` and `-960.jpg` versions; the pages list them in `srcset` so phones download the smaller files. Each animation has a lighter `-turn-sm.webp` version for phones (about 200 to 600 KB). On a phone, a full scroll of the homepage downloads about 5.5 MB of images.
 
 | File | Source in Dropbox | Used for |
 |---|---|---|
@@ -70,7 +70,7 @@ nothing is sent. Do not launch without setting the email.
 
 ## 3. Update links
 
-Also in `assets/js/main.js`, under `links`. Every YouTube, "Watch" and podcast button goes to
+Also in `assets/js/main.js`, under `links` (YouTube, Instagram, Facebook https://www.facebook.com/ReAltoPartners, LinkedIn, Calendly https://calendly.com/dangomer for "Book a call" buttons, Eventbrite https://www.eventbrite.com/o/dan-gomer-50128640253 for "See upcoming events"). Every YouTube, "Watch" and podcast button goes to
 The Resilient Real Estate Agent channel: https://www.youtube.com/@theresilientrealestateagent
 (the Subscribe buttons add `?sub_confirmation=1` so YouTube opens the subscribe prompt).
 The "Latest episodes" player embeds the channel's uploads playlist (`UUsfOEfe5zPbju0cti-AUzNQ`),

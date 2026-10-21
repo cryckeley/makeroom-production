@@ -52,6 +52,10 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
    Use `--width 1024 --fps 12 --quality 60` for cards and portraits (about 1.5 to 2 MB) and keep
    wide banners at the 1600 default. It writes `images/NAME.jpg` (the still, from the first composited frame) and
    `images/NAME-turn.webp` (1600px, 15 fps, about 1 to 1.5 MB), and prints `data-anim-ms`.
+4b. **Phone version (always).** Run the helper again with `--small` to write `NAME-turn-sm.webp`
+   (keeps the still): `--width 420 --fps 8 --quality 40` for portraits, `560` for cards, `720` for wide
+   banners, `260`-`340` for half-width art. Aim for 200 to 600 KB. Phones and screens under 760px use
+   it automatically. Without it a phone scroll of the homepage reached about 30 MB.
 5. **Markup.** On the `<img>` (in the generator, then rebuild):
    ```html
    <img src="images/NAME.jpg" data-anim="images/NAME-turn.webp" data-anim-ms="5000" alt="" ...>
@@ -61,7 +65,11 @@ animated WebP, never a video player. Reference: the "Latest episodes" banner
    overlays sit on top of the image, or when several images should play together) on hover-capable devices, IntersectionObserver at 60% visibility on
    touch devices, nothing for `prefers-reduced-motion`. Each play gets a fresh blob URL so it
    restarts from frame one, then swaps back to the still after `data-anim-ms`. On desktop the
-   animation file is fetched only when the image comes within 300px of the screen.
+   animation file is fetched only when the image comes within 300px of the screen. Each file downloads
+   once per page even if several images share it. The generator (`finish_images` in build.py) adds
+   `data-anim-sm` when a `-turn-sm.webp` exists, adds 480/960 `srcset` to stills, leaves the scrolling
+   carousel thumbnails (`data-thumb`) and images 160px wide or smaller (avatars, host chips) still, and
+   swaps every page use of the portraits listed in `ANIMATED_PORTRAITS` to their animated versions.
 6. **Verify** in Chromium (Playwright, `executable_path="/opt/pw-browsers/chromium"`) over a local
    http server (blob fetch does not work from file://): src becomes `blob:` on hover, returns to
    the still after the duration, plays on scroll with a mobile/touch context, stays still with

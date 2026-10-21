@@ -16,8 +16,10 @@ const SITE = {
     podcastYouTube: "https://www.youtube.com/@theresilientrealestateagent",
     youtubeSubscribe: "https://www.youtube.com/@theresilientrealestateagent?sub_confirmation=1",
     instagram: "https://www.instagram.com/danshometeam/",
-    facebook: "https://www.facebook.com/",
+    facebook: "https://www.facebook.com/ReAltoPartners",
     linkedin: "https://www.linkedin.com/in/dan-gomer/",
+    calendly: "https://calendly.com/dangomer", // Book a call with Dan
+    eventbrite: "https://www.eventbrite.com/o/dan-gomer-50128640253", // Dan's upcoming events
     expJoin: "https://www.exprealty.com/",
   },
 };
@@ -99,41 +101,58 @@ const SITE = {
     }, { once: true });
   });
 
-  /* ---------- Hosts' head turn: plays on hover (desktop) or when scrolled into view (touch) ---------- */
+  /* ---------- Portrait head turns: play on hover (desktop) or when scrolled into view (touch) ---------- */
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const canHover = window.matchMedia("(hover: hover)").matches;
+  // Phones and small screens get the lighter animation files (data-anim-sm)
+  const small = !canHover || window.matchMedia("(max-width: 760px)").matches;
+  const animCache = new Map(); // one download per file, shared by every image that uses it
+  const fetchAnim = (src) => {
+    if (!animCache.has(src)) {
+      animCache.set(src, fetch(src).then((r) => (r.ok ? r.blob() : null)).catch(() => null));
+    }
+    return animCache.get(src);
+  };
   doc.querySelectorAll("img[data-anim]").forEach((img) => {
     if (reduceMotion) return;
     const still = img.getAttribute("src");
+    const stillSet = img.getAttribute("srcset");
+    const src = (small && img.dataset.animSm) || img.dataset.anim;
     const duration = Number(img.dataset.animMs) || 5000;
-    let blob = null, playing = false, timer = 0, url = "";
-    // A fresh object URL restarts the animation from frame one every time
-    const load = () => blob ? Promise.resolve(blob)
-      : fetch(img.dataset.anim).then((r) => r.ok ? r.blob() : null).then((b) => (blob = b)).catch(() => null);
-    const stop = () => { img.src = still; if (url) URL.revokeObjectURL(url); url = ""; playing = false; };
+    let playing = false, timer = 0, url = "";
+    const stop = () => {
+      if (stillSet) img.setAttribute("srcset", stillSet);
+      img.src = still;
+      if (url) URL.revokeObjectURL(url);
+      url = ""; playing = false;
+    };
     const play = () => {
       if (playing || !img.isConnected) return;
       playing = true;
-      load().then((b) => {
+      fetchAnim(src).then((b) => {
         if (!playing) return;
         if (!b) { playing = false; return; } // animation unavailable: keep the still
-        url = URL.createObjectURL(b);
+        url = URL.createObjectURL(b); // a fresh URL restarts the animation from frame one
+        img.removeAttribute("srcset");
         img.src = url;
         clearTimeout(timer);
         timer = setTimeout(stop, duration);
       });
     };
     const host = img.closest("[data-anim-host], .yt") || img;
-    if (window.matchMedia("(hover: hover)").matches) {
+    if (!("IntersectionObserver" in window)) {
+      if (canHover) { host.addEventListener("mouseenter", play); host.addEventListener("focus", play); }
+      return;
+    }
+    if (canHover) {
       host.addEventListener("mouseenter", play);
       host.addEventListener("focus", play);
       // Fetch the animation only when it is about to be seen
-      if ("IntersectionObserver" in window) {
-        const pre = new IntersectionObserver((entries) => {
-          if (entries.some((e) => e.isIntersecting)) { load(); pre.disconnect(); }
-        }, { rootMargin: "300px" });
-        pre.observe(host);
-      } else load();
-    } else if ("IntersectionObserver" in window) {
+      const pre = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { fetchAnim(src); pre.disconnect(); }
+      }, { rootMargin: "300px" });
+      pre.observe(host);
+    } else {
       let seen = false;
       new IntersectionObserver((entries) => entries.forEach((e) => {
         if (e.isIntersecting && !seen) { seen = true; play(); }
