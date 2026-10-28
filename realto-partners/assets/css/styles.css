@@ -1013,6 +1013,7 @@ body.lb-open { overflow: hidden; }
 
 /* Team rhythm flywheel (Home, "Life on the team") */
 .flywheel { margin: 0; justify-self: center; width: 100%; max-width: 460px; }
+.flywheel.on-dark { max-width: 520px; }
 .flywheel svg { display: block; width: 100%; height: auto; overflow: visible; }
 .flywheel .fw-track { fill: none; stroke: rgba(13, 106, 25, 0.12); stroke-width: 14; }
 .flywheel .fw-arcs path { fill: none; stroke: var(--green-ink); stroke-width: 2.5; stroke-linecap: round; }
@@ -1064,11 +1065,16 @@ body.lb-open { overflow: hidden; }
 
 /* Round 2: rhythm note and the 4 R's */
 .rhythm-note { text-align: center; margin: clamp(22px, 3vw, 32px) auto 0; max-width: 60ch; font: italic 400 1.2rem/1.5 var(--f-display); color: var(--green-ink); }
-.four-rs { margin: 0; justify-self: center; width: 100%; max-width: 420px; }
-.four-rs svg { display: block; width: 100%; height: auto; }
-.four-rs .r-big { font: 700 34px var(--f-mark); fill: #fff; }
-.four-rs .r-word { font: 700 12.5px var(--f-body); letter-spacing: 0.04em; fill: #fff; }
-.four-rs .r-center { font: 700 40px var(--f-mark); fill: #8fe59b; letter-spacing: 0.04em; }
+/* 4 R's cycle: the Home flywheel reversed out for dark sections */
+.flywheel.on-dark .fw-track { stroke: rgba(143, 229, 155, 0.14); }
+.flywheel.on-dark .fw-arcs path { stroke: var(--green-hi); }
+.flywheel.on-dark marker path { fill: var(--green-hi); }
+.flywheel.on-dark .fw-nodes circle { fill: var(--brass); stroke: var(--ink); }
+.flywheel.on-dark .fw-orbit circle { fill: var(--green-hi); opacity: 0.7; }
+.flywheel.on-dark .fw-word { fill: var(--ivory); font-size: 20px; }
+.flywheel.on-dark .fw-sub { fill: rgba(243, 245, 242, 0.78); }
+.flywheel.on-dark .fw-center { fill: var(--green-hi); }
+.flywheel.on-dark .fw-center-sub { fill: rgba(243, 245, 242, 0.78); }
 .rs-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-dark); border: 1px solid var(--line-dark); border-radius: var(--radius-lg); overflow: hidden; }
 .rs-card { background: var(--ink); padding: clamp(24px, 3vw, 36px); }
 .rs-card .rs-n { font: 700 0.8rem/1 var(--f-mark); letter-spacing: 0.2em; color: var(--green-hi); }
@@ -1076,3 +1082,4 @@ body.lb-open { overflow: hidden; }
 .rs-card p { margin: 0; color: rgba(243,245,242,0.82); font-size: 0.98rem; }
 @media (max-width: 980px) { .rs-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .rs-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .flywheel.on-dark .fw-word { font-size: 24px; } .flywheel.on-dark .fw-sub { font-size: 17px; } .flywheel.on-dark .fw-center-sub { font-size: 13px; } }
