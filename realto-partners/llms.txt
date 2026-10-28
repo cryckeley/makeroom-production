@@ -1,0 +1,31 @@
+# ReAlto Partners
+
+> ReAlto Partners is a culture-first group of real estate agents based in Highlands Ranch in the Denver metro area of Colorado, co-founded by Dan and Allison Gomer, who lead it with co-leader Dianne Schell. It is a group within eXp Realty, the brokerage and parent company; Dan and Allison are eXp Realty members, not founders of eXp. Tagline: "Empowering People Through Real Estate." It is a real estate team, not a brokerage (eXp Realty is the brokerage) and not related to any private equity firm named Alto Partners.
+
+Key facts:
+- Co-founder and team leader: Dan Gomer, a former middle school science teacher and basketball coach, real estate investor since starting with fix and flips in Denver, in real estate since 2012, and with eXp Realty since 2022.
+- Co-founder and podcast co-host: Allison Gomer, Dan's wife and a Realtor with eXp Realty serving buyers and sellers in the Denver metro. Known for a calm, people-first approach and a focus on agent wellbeing and team culture.
+- Mission: positively impact as many lives as possible using the vehicle of real estate.
+- Vision: personal and financial freedom for every agent partner.
+- Core values: culture is our heartbeat; service is the path to success; resourcefulness and resiliency; integrity in all actions; community and dependability.
+- Weekly rhythm: Crush the Cap call Wednesdays 9:00 AM Mountain, team call Wednesdays 9:30 AM Mountain.
+- Community: masterminds, quarterly charity events, eXp eXplained luncheons (including Colorado Springs), an annual camping trip and an annual golf tournament.
+- Areas served: Denver, Highlands Ranch, Douglas County, Colorado Springs and Colorado's Front Range; agents can join from anywhere eXp Realty operates.
+- Phone: 303.261.5278
+- Podcast: The Resilient Real Estate Agent, a YouTube video podcast hosted by Dan Gomer with co-host Allison Gomer (https://www.youtube.com/@theresilientrealestateagent). It helps agents beat burnout and build a business that lasts.
+- Recurring events: Crush the Cap and team calls weekly, role play bi-weekly, eXp eXplained luncheons and Cocktails with Closers monthly, a speaker event and Cappers Dinner quarterly.
+- eXp Realty programs (revenue share, stock awards, splits and caps) are set by eXp Realty and change over time; earnings are not guaranteed.
+
+## Pages
+- [Home](https://realtopartners.com/): overview of ReAlto Partners, the eXp model, team life and the podcast
+- [Dan Gomer](https://realtopartners.com/dan-gomer.html): biography and speaking
+- [Allison Gomer](https://realtopartners.com/allison-gomer.html): Co-founder and Realtor, podcast co-host
+- [Dianne Schell](https://realtopartners.com/dianne-schell.html): Co-leader of ReAlto Partners
+- [Why ReAlto / Join the team](https://realtopartners.com/join-exp-realty-team.html): who thrives on the team, how eXp Realty works, local roots, agent FAQ
+- [The Resilient Real Estate Agent podcast](https://realtopartners.com/podcast.html): latest episodes, hosts and guest requests
+- [YouTube channel](https://www.youtube.com/@theresilientrealestateagent): The Resilient Real Estate Agent
+- [Contact](https://realtopartners.com/contact.html): phone and contact form
+
+## Optional
+- [Full text for LLMs](https://realtopartners.com/llms-full.txt)
+- [eXp Realty](https://www.exprealty.com/)
