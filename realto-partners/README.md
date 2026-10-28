@@ -7,7 +7,7 @@ Upload the contents of this folder to GoDaddy and it works.
 index.html                  Home: hero, podcast feature, eXp model, team rhythm, latest episodes, FAQ
 dan-gomer.html              Dan Gomer biography, speaking, FAQ
 allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, FAQ, inquiry form
-dianne-schell.html          Dianne Schell, co-leader (short page with an initials card until her photo and bio arrive)
+dianne-schell.html          Dianne Schell, co-leader (short page until her bio arrives)
 join-exp-realty-team.html   Why ReAlto, the 4 R's, how eXp Realty works, local roots, agent FAQ, agent inquiry form
 podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, hosts, guest form
 contact.html                General contact form
@@ -41,6 +41,7 @@ All photos are already in `images/`, cropped and sized for the web from the orig
 | `latest-episodes.jpg`, `video-burnout-purpose.jpg`, `video-sphere-marketing.jpg` | Designed posters built from the Dan and Allison cutouts, the Kling foothills backdrop and the site fonts | Video players on Home and Podcast (shown instead of YouTube's own thumbnails) |
 | `latest-episodes-turn.webp` | Animated from `latest-episodes.jpg` with Kling (image to video, same first and last frame) and saved as an animated WebP. Plays once on hover (desktop) or when scrolled into view (phones); visitors with reduced motion see the still. Dan and Allison should approve it before launch. | Latest episodes banner |
 | `video-burnout-purpose-turn.webp`, `video-sphere-marketing-turn.webp`, `podcast-dan-turn.webp`, `podcast-allison-turn.webp`, `meet-dan-turn.webp`, `meet-allison-turn.webp`, `dan-about-anim-turn.webp`, `allison-2-anim-turn.webp` (with matching `.jpg` stills) | Same Kling hover/scroll animation (see `.claude/skills/realto-portrait-animation`). On the podcast art Dan and Allison turn toward each other. | Video cards, podcast art, and every appearance of Dan's and Allison's portraits on Home, Dan, Allison and Podcast (page photos, host cards, carousel). The lightbox still opens the original photos. |
+| `dianne.jpg` | Rebuilt from her face in `/Realto Partners/Team-A.jpg` (about 120px in the original) with Kling image-o1: same face, hair and clothes, coworkers removed, placed on the site's Colorado backdrop. Replace with a real headshot when one is available. | Dianne's page |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `exp-logo-white.png` | `/Realto Partners/Marketing Info/exp-inverted-logo.png` (official white eXp Realty logo) | Beside the eXp sections on Home and Why ReAlto |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
