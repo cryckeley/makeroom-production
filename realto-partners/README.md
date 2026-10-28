@@ -7,6 +7,7 @@ Upload the contents of this folder to GoDaddy and it works.
 index.html                  Home: hero, podcast feature, eXp model, team rhythm, latest episodes, FAQ
 dan-gomer.html              Dan Gomer biography, speaking, FAQ
 allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, FAQ, inquiry form
+dianne-schell.html          Dianne Schell, co-leader (short page with an initials card until her photo and bio arrive)
 join-exp-realty-team.html   Why ReAlto, the 4 R's, how eXp Realty works, local roots, agent FAQ, agent inquiry form
 podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, hosts, guest form
 contact.html                General contact form

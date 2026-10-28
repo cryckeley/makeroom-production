@@ -1083,3 +1083,52 @@ body.lb-open { overflow: hidden; }
 @media (max-width: 980px) { .rs-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px) { .rs-grid { grid-template-columns: 1fr; } }
 @media (max-width: 560px) { .flywheel.on-dark .fw-word { font-size: 24px; } .flywheel.on-dark .fw-sub { font-size: 17px; } .flywheel.on-dark .fw-center-sub { font-size: 13px; } }
+
+/* Team Bios dropdown */
+.nav-group { position: relative; }
+.nav-drop { background: none; border: 0; padding: 0; color: inherit; font: inherit; font-weight: 600; font-size: 0.93rem; opacity: 0.85; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: opacity 0.2s; }
+.nav-drop svg { width: 11px; height: 8px; transition: transform 0.25s; }
+.nav-group:hover .nav-drop, .nav-group.is-current .nav-drop, .nav-group.open .nav-drop { opacity: 1; }
+.nav-group.is-current .nav-drop { box-shadow: 0 7px 0 -6px var(--brass); }
+.nav-menu {
+  position: absolute; top: calc(100% + 14px); left: 50%; min-width: 230px; padding: 8px;
+  transform: translate(-50%, 6px); opacity: 0; visibility: hidden;
+  transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+  background: rgba(29, 33, 31, 0.97); border: 1px solid rgba(143,229,155,0.2); border-radius: 14px;
+  box-shadow: 0 20px 40px -18px rgba(0,0,0,0.6);
+}
+.nav-menu::before { content: ""; position: absolute; inset: -16px 0 auto 0; height: 16px; } /* hover bridge */
+.nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu, .nav-group.open .nav-menu {
+  opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity 0.2s, transform 0.2s, visibility 0s;
+}
+.nav-group:hover .nav-drop svg, .nav-group.open .nav-drop svg { transform: rotate(180deg); }
+.nav-menu a { display: flex; flex-direction: column; gap: 2px; padding: 10px 14px; border-radius: 10px; color: var(--ivory); opacity: 1; }
+.nav-menu a b { font-weight: 700; font-size: 0.95rem; }
+.nav-menu a span { font: 600 0.66rem/1.2 var(--f-mark); letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-hi); }
+.nav-menu a:hover, .nav-menu a:focus-visible { background: rgba(143,229,155,0.1); }
+.nav-menu a[aria-current="page"] { background: rgba(143,229,155,0.14); }
+.nav .nav-menu a[aria-current="page"]::after { display: none; }
+@media (max-width: 920px) {
+  /* In the slide-in panel the bios are listed under a small heading */
+  .nav-group { border-bottom: 1px solid rgba(243,245,242,0.1); padding: 14px 0 10px; }
+  .nav-drop { font: 600 0.72rem/1 var(--f-mark); letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-hi); opacity: 1; cursor: default; pointer-events: none; }
+  .nav-drop svg { display: none; }
+  .nav-group.is-current .nav-drop { box-shadow: none; }
+  .nav-menu, .nav-group:hover .nav-menu, .nav-group:focus-within .nav-menu, .nav-group.open .nav-menu {
+    position: static; transform: none; opacity: 1; visibility: visible; min-width: 0; padding: 6px 0 0;
+    background: none; border: 0; box-shadow: none; transition: none;
+  }
+  .nav-menu::before { display: none; }
+  .nav-menu a { flex-direction: row; align-items: baseline; justify-content: space-between; padding: 8px 0; border-radius: 0; }
+  .nav-menu a b { font: 400 1.4rem/1.15 var(--f-display); }
+  .nav-menu a[aria-current="page"] { background: none; }
+  .nav-menu a[aria-current="page"] b { color: var(--green-hi); font-style: italic; }
+}
+
+/* Why ReAlto: "Who thrives" in two columns */
+.checklist.two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(28px, 5vw, 64px); row-gap: 18px; margin-top: 8px; }
+@media (max-width: 760px) { .checklist.two-col { grid-template-columns: 1fr; } }
+@media (min-width: 921px) {
+  .nav-group.dismissed .nav-menu { opacity: 0; visibility: hidden; transform: translate(-50%, 6px); }
+  .nav-group.dismissed .nav-drop svg { transform: none; }
+}

@@ -101,6 +101,24 @@ const SITE = {
     }, { once: true });
   });
 
+  /* ---------- Team Bios dropdown (desktop; the mobile panel lists the bios open) ---------- */
+  doc.querySelectorAll(".nav-group").forEach((group) => {
+    const btn = group.querySelector(".nav-drop");
+    // "dismissed" keeps the menu shut after Escape even while hovered or focused
+    const set = (open) => {
+      group.classList.toggle("open", open);
+      group.classList.toggle("dismissed", !open);
+      btn.setAttribute("aria-expanded", String(open));
+    };
+    const reset = () => group.classList.remove("dismissed");
+    btn.addEventListener("click", (e) => { e.stopPropagation(); set(!group.classList.contains("open")); });
+    group.addEventListener("mouseenter", () => { if (!group.classList.contains("dismissed")) btn.setAttribute("aria-expanded", "true"); });
+    group.addEventListener("mouseleave", () => { reset(); if (!group.classList.contains("open")) btn.setAttribute("aria-expanded", "false"); });
+    doc.addEventListener("click", (e) => { if (!group.contains(e.target)) set(false); });
+    group.addEventListener("keydown", (e) => { if (e.key === "Escape") { e.stopPropagation(); set(false); btn.focus(); } });
+    group.addEventListener("focusout", (e) => { if (!group.contains(e.relatedTarget)) { set(false); reset(); } });
+  });
+
   /* ---------- Portrait head turns: play on hover (desktop) or when scrolled into view (touch) ---------- */
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const canHover = window.matchMedia("(hover: hover)").matches;
