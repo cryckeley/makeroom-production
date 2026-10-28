@@ -4,11 +4,11 @@ Plain HTML, CSS and a little JavaScript. No WordPress, no database, no build ste
 Upload the contents of this folder to GoDaddy and it works.
 
 ```
-index.html                  Home: ReAlto overview, podcast feature, eXp model, team life, Allison, FAQ
-dan-gomer.html              Dan Gomer biography, book, speaking, values, FAQ
+index.html                  Home: hero, podcast feature, eXp model, team rhythm, latest episodes, FAQ
+dan-gomer.html              Dan Gomer biography, speaking, FAQ
 allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, FAQ, inquiry form
-join-exp-realty-team.html   Why ReAlto, how eXp Realty works, local roots, agent FAQ, agent inquiry form
-podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, 3R Framework, hosts, guest form
+join-exp-realty-team.html   Why ReAlto, the 4 R's, how eXp Realty works, local roots, agent FAQ, agent inquiry form
+podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, hosts, guest form
 contact.html                General contact form
 404.html                    Not found page (noindex)
 sitemap.xml                 For Google Search Console and Bing Webmaster Tools
@@ -55,6 +55,11 @@ professional Realtor headshot can replace these anytime; keep the same file name
 Every photo gets the same ReAlto color grade and green edge automatically (in `styles.css`, "One consistent
 ReAlto photo grade"), so shots from different shoots look like one set. For the closest match, crop portraits
 to 4:5 and use photos with soft, warm light.
+
+## Animations
+
+The hover/scroll head-turn animations are switched off (client feedback, Oct 2026). The files stay in
+`images/`; to bring one back, add its file name to `ANIMATIONS_ON` in the generator and rebuild.
 
 ## 2. Turn on the forms
 
