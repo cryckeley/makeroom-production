@@ -1132,3 +1132,32 @@ body.lb-open { overflow: hidden; }
   .nav-group.dismissed .nav-menu { opacity: 0; visibility: hidden; transform: translate(-50%, 6px); }
   .nav-group.dismissed .nav-drop svg { transform: none; }
 }
+
+/* Round 3: mission/vision, did-you-know, FAQ page, Dianne connect box, footer connect */
+.mv-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 32px); }
+.mv-card { background: var(--ivory); border: 1px solid var(--line-light); border-radius: var(--radius-lg); padding: clamp(26px, 4vw, 44px); }
+.mv-card .mv-label { display: block; font: 700 0.78rem/1 var(--f-mark); letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-ink); margin-bottom: 16px; }
+.mv-card p { margin: 0; font: 400 clamp(1.25rem, 2.2vw, 1.6rem)/1.4 var(--f-display); color: var(--ink); }
+.dyk-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--line-light); border: 1px solid var(--line-light); border-radius: var(--radius-lg); overflow: hidden; }
+.dyk-list li { background: var(--ivory); padding: clamp(20px, 3vw, 30px); display: flex; flex-direction: column; gap: 6px; }
+.dyk-list b { font: 500 1.25rem/1.2 var(--f-display); color: var(--ink); }
+.dyk-list span { color: var(--slate); font-size: 0.96rem; }
+@media (max-width: 860px) { .mv-grid { grid-template-columns: 1fr; } .dyk-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .dyk-list { grid-template-columns: 1fr; } }
+.faq-more { margin: 18px 0 0; }
+.faq-jump { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.faq-jump a { padding: 9px 16px; border: 1px solid rgba(243,245,242,0.3); border-radius: 999px; color: var(--ivory); font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+.faq-jump a:hover { border-color: var(--green-hi); color: var(--green-hi); }
+.faq-page { max-width: 880px; }
+.faq-group { scroll-margin-top: 100px; }
+.faq-group + .faq-group { margin-top: clamp(40px, 6vw, 64px); }
+.ds-logo { display: block; width: min(320px, 80%); height: auto; margin-top: 26px; }
+.connect-box { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center; border: 1px solid rgba(143,229,155,0.22); border-radius: var(--radius-lg); padding: clamp(28px, 5vw, 56px); background: radial-gradient(90% 120% at 100% 0%, rgba(27,163,46,0.18), transparent 60%); }
+.connect-box .lede { margin: 0; }
+.connect-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; }
+.connect-actions .socials { margin-top: 0; }
+@media (max-width: 760px) { .connect-box { grid-template-columns: 1fr; } }
+.footer-connect { margin: 16px 0 0; font-weight: 700; }
+.footer-connect a { color: var(--green-hi); display: inline-flex; align-items: center; gap: 6px; }
+.footer-connect a svg { width: 16px; height: 16px; }
+@media (max-width: 1180px) and (min-width: 921px) { .nav { gap: 18px; } .nav a, .nav-drop { font-size: 0.86rem; } .nav .btn { padding: 10px 16px; } }

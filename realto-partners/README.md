@@ -4,11 +4,13 @@ Plain HTML, CSS and a little JavaScript. No WordPress, no database, no build ste
 Upload the contents of this folder to GoDaddy and it works.
 
 ```
-index.html                  Home: hero, podcast feature, eXp model, team rhythm, latest episodes, FAQ
-dan-gomer.html              Dan Gomer biography, speaking, FAQ
-allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, FAQ, inquiry form
-dianne-schell.html          Dianne Schell, co-leader (short page until her bio arrives)
-join-exp-realty-team.html   Why ReAlto, the 4 R's, how eXp Realty works, local roots, agent FAQ, agent inquiry form
+index.html                  Home: hero, podcast feature, team rhythm, photo strip, short FAQ
+dan-gomer.html              Dan Gomer biography, speaking, at a glance
+allison-gomer.html          Allison Gomer: Realtor and partner, podcast co-host, what she believes, inquiry form
+dianne-schell.html          Dianne Schell, co-leader: bio from her own text, her logo, Calendly and social links
+join-exp-realty-team.html   Why ReAlto: vision and mission, the 4 R's, what agents gain, more than residential, agent inquiry form
+why-exp-realty.html         Why eXp: how eXp Realty creates recurring income (revenue share, ownership, cloud), FAQ
+faq.html                    Every question on the site in one place, grouped by topic (the only page with FAQPage schema)
 podcast.html                The Resilient Real Estate Agent: auto-updating latest-episodes player, hosts, guest form
 contact.html                General contact form
 404.html                    Not found page (noindex)
@@ -41,6 +43,7 @@ All photos are already in `images/`, cropped and sized for the web from the orig
 | `latest-episodes.jpg`, `video-burnout-purpose.jpg`, `video-sphere-marketing.jpg` | Designed posters built from the Dan and Allison cutouts, the Kling foothills backdrop and the site fonts | Video players on Home and Podcast (shown instead of YouTube's own thumbnails) |
 | `latest-episodes-turn.webp` | Animated from `latest-episodes.jpg` with Kling (image to video, same first and last frame) and saved as an animated WebP. Plays once on hover (desktop) or when scrolled into view (phones); visitors with reduced motion see the still. Dan and Allison should approve it before launch. | Latest episodes banner |
 | `video-burnout-purpose-turn.webp`, `video-sphere-marketing-turn.webp`, `podcast-dan-turn.webp`, `podcast-allison-turn.webp`, `meet-dan-turn.webp`, `meet-allison-turn.webp`, `dan-about-anim-turn.webp`, `allison-2-anim-turn.webp` (with matching `.jpg` stills) | Same Kling hover/scroll animation (see `.claude/skills/realto-portrait-animation`). On the podcast art Dan and Allison turn toward each other. | Video cards, podcast art, and every appearance of Dan's and Allison's portraits on Home, Dan, Allison and Podcast (page photos, host cards, carousel). The lightbox still opens the original photos. |
+| `dianne-logo.png` | Dianne's own logo kit, `DS_Logo_Primary-Horizontal_Charcoal.png` | Dianne's bio section |
 | `dianne.jpg` | Rebuilt from her face in `/Realto Partners/Team-A.jpg` (about 120px in the original) with Kling image-o1: same face, hair and clothes, coworkers removed, placed on the site's Colorado backdrop. Replace with a real headshot when one is available. | Dianne's page |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `exp-logo-white.png` | `/Realto Partners/Marketing Info/exp-inverted-logo.png` (official white eXp Realty logo) | Beside the eXp sections on Home and Why ReAlto |
@@ -86,13 +89,14 @@ so new episodes appear on the site automatically with no updates needed.
 ## 4. SEO and AI search: what's built in
 
 - One H1 per page that carries the main keyword, plus question-style H2s ("What is ReAlto Partners?",
-  "How does an eXp Realty team create recurring income?") that match how people search and how AI assistants answer.
+  "How does eXp Realty create recurring income?") that match how people search and how AI assistants answer.
 - Unique title (under 60 characters) and meta description (under 160) on every page, plus canonical URLs,
   Open Graph and Twitter cards.
 - JSON-LD structured data as one linked `@graph`: WebSite, RealEstateAgent (ReAlto Partners, with eXp Realty
   as parent organization), Person (Dan and Allison, linked as spouses), ProfessionalService with an offer
   catalog (Allison's practice), PodcastSeries, Book, ProfilePage, ContactPage, BreadcrumbList and FAQPage.
-  Every FAQ in the schema is also visible on the page.
+  FAQPage markup lives only on `faq.html` (Google wants one FAQ source per question); every question in it
+  is visible on that page. Other pages show short FAQ sections without the markup.
 - Entity disambiguation: `alternateName`, `disambiguatingDescription` and `sameAs` links help search
   engines and AI tell ReAlto Partners apart from unrelated firms called "Alto Partners".
 - Answer-first summaries, "at a glance" fact tables and FAQs: short, quotable facts that AI assistants
@@ -126,8 +130,11 @@ When you edit content, update the date in both places (search for `2026-10-20`).
   separate business is intentionally not referenced anywhere on the site or in the structured data. The
   "What Allison believes" section is written from her values; she should approve the wording.
 - Dan's timeline (real estate since 2012, Your Castle Real Estate, eXp since 2022) comes from his LinkedIn.
-- Location is listed as Highlands Ranch with service areas around it. Phone 303.261.5278 is from Dan's
+- Location: based in Denver (Denver metro and Front Range), with agents in Colorado, Texas, California,
+  Wisconsin and Minnesota, and open to agents anywhere eXp operates. Phone 303.261.5278 is from Dan's
   earlier website copy.
+- Still waiting on: the email address the forms should send to, team and event photos for the photo
+  strip (Neil, Jessica, Dianne), Dianne's real headshot, and Allison's notes.
 - eXp program wording is kept general with a disclaimer. Check it against eXp's current marketing guidelines.
 
 ## Upload to GoDaddy
