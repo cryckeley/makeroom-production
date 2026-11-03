@@ -44,7 +44,8 @@ All photos are already in `images/`, cropped and sized for the web from the orig
 | `latest-episodes-turn.webp` | Animated from `latest-episodes.jpg` with Kling (image to video, same first and last frame) and saved as an animated WebP. Plays once on hover (desktop) or when scrolled into view (phones); visitors with reduced motion see the still. Dan and Allison should approve it before launch. | Latest episodes banner |
 | `video-burnout-purpose-turn.webp`, `video-sphere-marketing-turn.webp`, `podcast-dan-turn.webp`, `podcast-allison-turn.webp`, `meet-dan-turn.webp`, `meet-allison-turn.webp`, `dan-about-anim-turn.webp`, `allison-2-anim-turn.webp` (with matching `.jpg` stills) | Same Kling hover/scroll animation (see `.claude/skills/realto-portrait-animation`). On the podcast art Dan and Allison turn toward each other. | Video cards, podcast art, and every appearance of Dan's and Allison's portraits on Home, Dan, Allison and Podcast (page photos, host cards, carousel). The lightbox still opens the original photos. |
 | `dianne-logo.png` | Dianne's own logo kit, `DS_Logo_Primary-Horizontal_Charcoal.png` | Dianne's bio section |
-| `dianne.jpg` | Rebuilt from her face in `/Realto Partners/Team-A.jpg` (about 120px in the original) with Kling image-o1: same face, hair and clothes, coworkers removed, placed on the site's Colorado backdrop. Replace with a real headshot when one is available. | Dianne's page |
+| `dianne.jpg` | Dianne's professional headshot (`DIanne Headshot 1 Cropped.jpg` from her Dropbox headshots folder, Nov 2026), cropped to 4:5 | Dianne's page |
+| `event-01.jpg` to `event-14.jpg` | Team and event photos from Dianne's Dropbox event folder (Nov 2026), cropped to 4:3 at 1600x1200 with 480 and 960 versions | Home page photo strip and lightbox |
 | `logo-white.png`, `logo.png` | `/Realto Partners/Marketing Info/ReAlto Partners Final Logo_White Transparent.png` and `...Final Logo Transparent.png` | Header and footer logo, schema logo |
 | `exp-logo-white.png` | `/Realto Partners/Marketing Info/exp-inverted-logo.png` (official white eXp Realty logo) | Beside the eXp sections on Home and Why ReAlto |
 | `favicon.png` | `/Realto Partners/Marketing Info/favicon2.png` | Browser tab icon |
@@ -133,8 +134,9 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 - Location: based in Denver (Denver metro and Front Range), with agents in Colorado, Texas, California,
   Wisconsin and Minnesota, and open to agents anywhere eXp operates. Phone 303.261.5278 is from Dan's
   earlier website copy.
-- Still waiting on: the email address the forms should send to, team and event photos for the photo
-  strip (Neil, Jessica, Dianne), Dianne's real headshot, and Allison's notes.
+- Still waiting on: the email address the forms should send to and Allison's notes. More event photos
+  can be added to `PACK` in the build (same 4:3 crop).
+- Footer LinkedIn icon points to the ReAlto Partners company page (linkedin.com/company/realto-partners).
 - eXp program wording is kept general with a disclaimer. Check it against eXp's current marketing guidelines.
 
 ## Upload to GoDaddy

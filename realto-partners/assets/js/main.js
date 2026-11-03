@@ -17,7 +17,7 @@ const SITE = {
     youtubeSubscribe: "https://www.youtube.com/@theresilientrealestateagent?sub_confirmation=1",
     instagram: "https://www.instagram.com/realto_partners/",
     facebook: "https://www.facebook.com/ReAltoPartners",
-    linkedin: "https://www.linkedin.com/in/dan-gomer-62221551/",
+    linkedin: "https://www.linkedin.com/company/realto-partners/",
     calendly: "https://calendly.com/dangomer", // Book a call with Dan
     eventbrite: "https://www.eventbrite.com/o/dan-gomer-50128640253", // Dan's upcoming events
     expJoin: "https://www.exprealty.com/",
