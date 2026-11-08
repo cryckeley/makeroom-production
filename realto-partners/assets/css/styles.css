@@ -804,15 +804,19 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
     var(--ink);
 }
 .hero-slides { position: absolute; inset: 0; z-index: -2; }
-.hero-slides img {
-  position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 35%;
-  opacity: 0; filter: saturate(0.85) contrast(1.06);
+/* Each slide is a <picture>: phones get a tall crop, tablets a square crop, desktop the full photo */
+.hero-slides picture {
+  position: absolute; inset: 0; opacity: 0;
   animation: heroSlide 28s linear infinite;
 }
-.hero-slides img:nth-child(1) { animation-delay: -1.4s; }
-.hero-slides img:nth-child(2) { animation-delay: 5.6s; }
-.hero-slides img:nth-child(3) { animation-delay: 12.6s; }
-.hero-slides img:nth-child(4) { animation-delay: 19.6s; }
+.hero-slides img {
+  position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: center 35%;
+  filter: saturate(0.85) contrast(1.06);
+}
+.hero-slides picture:nth-child(1) { animation-delay: -1.4s; }
+.hero-slides picture:nth-child(2) { animation-delay: 5.6s; }
+.hero-slides picture:nth-child(3) { animation-delay: 12.6s; }
+.hero-slides picture:nth-child(4) { animation-delay: 19.6s; }
 @keyframes heroSlide {
   0%   { opacity: 0; transform: scale(1.02); }
   5%   { opacity: 1; }
@@ -858,8 +862,8 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
   .hero-founder { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-slides img { animation: none; }
-  .hero-slides img:first-child { opacity: 1; }
+  .hero-slides picture { animation: none; }
+  .hero-slides picture:first-child { opacity: 1; }
   .pack-track { animation: none; }
 }
 
@@ -870,10 +874,10 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
 @media (max-width: 560px) { .brand img { height: 32px; } }
 
 /* Three-slide team hero timing */
-.hero-slides img { animation-duration: 21s; }
-.hero-slides img:nth-child(1) { animation-delay: -1.05s; }
-.hero-slides img:nth-child(2) { animation-delay: 5.95s; }
-.hero-slides img:nth-child(3) { animation-delay: 12.95s; }
+.hero-slides picture { animation-duration: 21s; }
+.hero-slides picture:nth-child(1) { animation-delay: -1.05s; }
+.hero-slides picture:nth-child(2) { animation-delay: 5.95s; }
+.hero-slides picture:nth-child(3) { animation-delay: 12.95s; }
 @keyframes heroSlide {
   0%   { opacity: 0; transform: scale(1.02); }
   5%   { opacity: 1; }
