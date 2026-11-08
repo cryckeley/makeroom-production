@@ -108,7 +108,7 @@ h1, h2, h3, h4 {
   margin: 0 0 0.5em;
   font-variation-settings: "SOFT" 30, "opsz" 120;
 }
-h1 { font-size: clamp(2.7rem, 7vw, 5.8rem); }
+h1 { font-size: clamp(2.3rem, 5.95vw, 4.93rem); } /* 85% of the original clamp(2.7rem, 7vw, 5.8rem), matching the home hero */
 h2 { font-size: clamp(2.1rem, 4.6vw, 3.7rem); }
 h3 { font-size: clamp(1.4rem, 2.2vw, 1.85rem); line-height: 1.15; }
 h4 { font-size: 1.2rem; line-height: 1.25; }
@@ -402,10 +402,18 @@ section { position: relative; }
 .podcast-art .overlay small { font: 600 0.72rem/1 var(--f-mark); letter-spacing: 0.32em; color: var(--ember-soft); text-transform: uppercase; }
 .podcast-art .overlay strong { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1; margin-top: 12px; }
 .podcast-art .overlay strong em { color: var(--brass); }
-.wave { display: flex; align-items: flex-end; gap: 4px; height: 34px; margin-top: 18px; }
-.wave i { width: 4px; background: var(--ember); border-radius: 2px; animation: wave 1.2s ease-in-out infinite; }
-.wave i:nth-child(odd) { background: var(--brass); }
-@keyframes wave { 0%, 100% { height: 20%; } 50% { height: 100%; } }
+/* Podcast waveform: a scrolling two-voice conversation (generated in the build, two shades of green) */
+.wave {
+  position: relative; width: min(260px, 100%); height: 40px; margin-top: 18px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent);
+}
+.wave-svg { display: block; height: 40px; max-width: none; animation: waveScroll 26s linear infinite; }
+.wave-svg path { fill: none; stroke-width: 2; stroke-linecap: round; }
+.wave-svg .spk-a { stroke: var(--brass); }
+.wave-svg .spk-b { stroke: var(--ember-soft); }
+@keyframes waveScroll { to { transform: translateX(calc(-1 * var(--wave-period))); } }
+@media (prefers-reduced-motion: reduce) { .wave-svg { animation: none; } }
 
 @media (max-width: 920px) { .podcast-card { grid-template-columns: 1fr; } }
 
@@ -695,6 +703,7 @@ button[disabled] { opacity: 0.6; pointer-events: none; }
 /* 404 / thank-you */
 .center-screen { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 120px var(--gutter) 60px; }
 .center-screen .big { font: 700 clamp(6rem, 22vw, 14rem)/0.9 var(--f-mark); color: var(--brass); opacity: 0.9; }
+.center-screen h1.h2 { font-size: clamp(1.79rem, 3.91vw, 3.15rem); } /* hero headline at 85%, like every other page */
 
 /* ==========================================================================
    SEO / content additions
@@ -760,7 +769,7 @@ button[disabled] { opacity: 0.6; pointer-events: none; }
 
 /* ---------- The Resilient Real Estate Agent co-brand ---------- */
 a.podcast-art { display: block; color: var(--ivory); text-decoration: none; }
-a.podcast-art:hover .wave i { animation-duration: 0.8s; }
+a.podcast-art:hover .wave-svg { animation-duration: 16s; }
 .podcast-art .overlay strong { line-height: 1.02; }
 .show-hosts { display: block; margin-top: 10px; font: 600 0.78rem/1 var(--f-mark); letter-spacing: 0.22em; text-transform: uppercase; color: rgba(243,245,242,0.7); }
 .show-logo {
@@ -832,7 +841,7 @@ a.podcast-art:hover .wave i { animation-duration: 0.8s; }
     linear-gradient(135deg, rgba(27,163,46,0.18), transparent 50%);
 }
 .hero-inner { padding-bottom: 40px; }
-.hero-inner h1 { max-width: 15ch; font-size: clamp(2.8rem, 7.4vw, 6.2rem); margin-bottom: 26px; }
+.hero-inner h1 { max-width: 15ch; font-size: clamp(2.38rem, 6.29vw, 5.27rem); margin-bottom: 26px; } /* 85% of the original clamp(2.8rem, 7.4vw, 6.2rem) */
 .hero-inner .lede { max-width: 56ch; margin-bottom: 34px; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
 .hero-founder {
@@ -1165,3 +1174,13 @@ body.lb-open { overflow: hidden; }
 .footer-connect a { color: var(--green-hi); display: inline-flex; align-items: center; gap: 6px; }
 .footer-connect a svg { width: 16px; height: 16px; }
 @media (max-width: 1180px) and (min-width: 921px) { .nav { gap: 18px; } .nav a, .nav-drop { font-size: 0.86rem; } .nav .btn { padding: 10px 16px; } }
+
+/* Small serif headings (card titles): use Fraunces' text optical size, not the display cut.
+   The display cut ("opsz" 120) has hairline strokes and tight spacing that blur at ~20px. */
+h4, .h4, .rhythm-item h3, .rhythm-item h4 {
+  font-variation-settings: "SOFT" 30, "opsz" 18;
+  letter-spacing: 0.005em;
+  font-weight: 500;
+}
+.rhythm-item .h4, .rhythm-item h4 { font-size: 1.32rem; line-height: 1.2; margin: 14px 0 8px; }
+.rhythm-item p { font-size: 0.97rem; line-height: 1.55; }
