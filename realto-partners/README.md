@@ -141,10 +141,49 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 - Footer LinkedIn icon points to the ReAlto Partners company page (linkedin.com/company/realto-partners).
 - eXp program wording is kept general with a disclaimer. Check it against eXp's current marketing guidelines.
 
-## Upload to GoDaddy
+## Hosting and launch record (live since November 2026)
 
-cPanel > File Manager > `public_html` > Upload. Upload everything in this folder (including the hidden
-`.htaccess`), keeping the folder structure. Or use any FTP client.
+- **Live at** https://realtopartners.com on GoDaddy cPanel shared hosting (server IP 107.180.115.215,
+  temporary address e2f.e7c.mytemp.website). Files live in `public_html`; upload changed files there with
+  cPanel File Manager (show hidden files so `.htaccess` goes too). This folder and the server should match:
+  push to this branch whenever the server changes.
+- **SSL**: cPanel AutoSSL, renews on its own. `/.well-known/` is left out of the redirects so renewals keep working.
+- **DNS**: the nameservers are still Cloudflare's (joyce and jermaine.ns.cloudflare.com), used for DNS only.
+  `realtopartners.com` A record points to 107.180.115.215 and `www` to the plain domain, both "DNS only"
+  (grey cloud, no Cloudflare proxy). The same zone holds Google Workspace email (MX) and SPF/TXT records:
+  never change the nameservers or those records without copying them first, or team email stops.
+- **Redirects** (`.htaccess`): www, plain http and the temporary address all 301 to https://realtopartners.com,
+  keeping the path. Old `about.html` and `join.html` 301 to the new pages.
+- **Security headers** (`.htaccess`): a Content Security Policy that allows only this site's scripts plus one
+  inline script by hash, Google Fonts, YouTube embeds and FormSubmit; frame-ancestors 'self' and
+  X-Frame-Options; HSTS for a year; nosniff, Referrer-Policy, Permissions-Policy, COOP. If you edit the one
+  inline script, update its sha256 hash in the CSP or it stops running. If the head-turn animations come back
+  (they fetch files and show them as blob: URLs), add `blob:` to `img-src`.
+- **Blocked** (403): hidden files, any PHP/CGI/script file, WordPress and phpMyAdmin probe paths, cgi-bin,
+  backup/config/log/database/archive files, directory listings, and methods other than GET, HEAD, OPTIONS.
+- **Forms**: all four post to FormSubmit for danielgomer1@gmail.com (see section 2).
+- **GoDaddy injects a script**: GoDaddy appends its own "performance monitoring" script (img1.wsimg.com
+  tccl.min.js plus an inline snippet) to every page on the server. It is not in these files, and the CSP blocks
+  it, which logs two console errors per page but breaks nothing. To remove it, ask GoDaddy hosting support to
+  opt the account out, as the injected comment says. Do not loosen the CSP to allow it.
+
+## Open items after launch
+
+1. **Activate the forms**: submit the Contact form once on the live site; Dan clicks the "Activate form" email
+   FormSubmit sends to danielgomer1@gmail.com (check spam). Nothing is delivered until then.
+2. **Google Search Console and Bing Webmaster Tools**: add realtopartners.com (a google-site-verification TXT
+   record already exists in DNS, so a property may already exist under someone's Google account), submit
+   `https://realtopartners.com/sitemap.xml`, and import into Bing from Search Console.
+3. **Old site URLs**: after a week, check Search Console's "Not found (404)" report for pages from the old site
+   and add 301s in `.htaccess` to the closest new page.
+4. **GoDaddy injected script**: ask support to opt out (see above).
+5. **Listings**: update the website link to https://realtopartners.com on Google Business Profile, eXp agent
+   pages, LinkedIn, Instagram, Facebook and YouTube, with the same name, city and phone (section 5).
+6. **Allison's notes** on her page are still outstanding.
+7. **Analytics**: none installed. If wanted (GA4, Plausible), the CSP must allow that provider's script and
+   connect hosts.
+8. **Merge**: the work is on branch `claude/rialto-partners-redesign-bcbfzt` (draft PR #1); merge it when
+   the client signs off so `master` matches the live site.
 
 ## Fonts and colors
 
