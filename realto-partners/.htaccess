@@ -53,6 +53,23 @@ ServerSignature Off
   Header unset X-Powered-By
 </IfModule>
 
+# Fresh content after launch and after every update
+<IfModule mod_headers.c>
+  # Pages, CSS and JS: browsers keep a copy but check with the server on every visit.
+  # Unchanged files come back as a tiny 304, so updates show right away without slowing the site.
+  <FilesMatch "(?i)\.(html|css|js|txt|xml)$">
+    Header set Cache-Control "no-cache"
+    Header unset Expires
+  </FilesMatch>
+
+  # One-time cache clear: the first page a browser loads from the new site tells it to drop
+  # everything it cached for this site (including the old Kajabi site and its www redirect),
+  # then sets a cookie so it only happens once per browser. To force another clear for everyone
+  # later, change rp_site=2 to rp_site=3 in both lines below.
+  Header always set Clear-Site-Data "\"cache\"" "expr=%{HTTP_COOKIE} !~ /rp_site=2/ && %{CONTENT_TYPE} =~ m#^text/html#"
+  Header always add Set-Cookie "rp_site=2; Max-Age=31536000; Path=/; Secure; SameSite=Lax" "expr=%{HTTP_COOKIE} !~ /rp_site=2/ && %{CONTENT_TYPE} =~ m#^text/html#"
+</IfModule>
+
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
 </IfModule>
@@ -63,8 +80,6 @@ ServerSignature Off
   ExpiresByType image/png "access plus 1 month"
   ExpiresByType image/webp "access plus 1 month"
   ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
 </IfModule>
 
 # Old page names from the first draft
