@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Disallow: /404.html
+Disallow: /cgi-bin/
 
 # AI crawlers, explicitly allowed so assistants can cite this site
 User-agent: GPTBot
