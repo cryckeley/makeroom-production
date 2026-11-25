@@ -7,7 +7,7 @@ const SITE = {
   // Every form on the site posts here. Uses FormSubmit (free, no backend):
   // put the inbox that should receive leads after /ajax/. The very first
   // submission sends a one-time "activate this form" email to that inbox.
-  formEndpoint: "https://formsubmit.co/ajax/REPLACE_WITH_YOUR_EMAIL@example.com",
+  formEndpoint: "https://formsubmit.co/ajax/danielgomer1@gmail.com",
 
   // Links used by every button with a matching data-link attribute.
   links: {

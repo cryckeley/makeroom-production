@@ -135,7 +135,8 @@ When you edit content, update the date in both places (search for `2026-10-20`).
 - Location: based in Denver (Denver metro and Front Range), with agents in Colorado, Texas, California,
   Wisconsin and Minnesota, and open to agents anywhere eXp operates. Phone 303.261.5278 is from Dan's
   earlier website copy.
-- Still waiting on: the email address the forms should send to and Allison's notes. More event photos
+- Forms send to danielgomer1@gmail.com (FormSubmit; Dan confirms the one-time activation email after the first
+  submission). Still waiting on Allison's notes. More event photos
   can be added to `PACK` in the build (same 4:3 crop).
 - Footer LinkedIn icon points to the ReAlto Partners company page (linkedin.com/company/realto-partners).
 - eXp program wording is kept general with a disclaimer. Check it against eXp's current marketing guidelines.
