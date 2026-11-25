@@ -1,0 +1,76 @@
+# GoDaddy (Apache) settings for the static ReAlto Partners site
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+
+# No directory listings, no server version in error pages
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Only normal page requests (blocks TRACE, PUT, DELETE and other probe methods)
+  RewriteCond %{REQUEST_METHOD} !^(GET|HEAD|OPTIONS)$
+  RewriteRule ^ - [F,L]
+
+  # One canonical address: https://realtopartners.com
+  # www, the old temp domain and any other host name, plus plain http, all 301 to it.
+  # /.well-known/ is left alone so AutoSSL certificate renewals keep working.
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteCond %{HTTP_HOST} !^realtopartners\.com$ [NC,OR]
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://realtopartners.com%{REQUEST_URI} [R=301,L]
+
+  # Site takeover protection: hidden files and folders (.git, .env, .htaccess...) are off limits
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+  # Nothing on this static site runs server code, so block script and CGI paths outright.
+  # An uploaded web shell or a probe for a CMS login gets a 403 instead of running.
+  RewriteRule ^cgi-bin(/|$) - [F,L]
+  RewriteRule \.(php[0-9]?|phtml|phar|cgi|pl|py|sh|asp|aspx|jsp)$ - [F,L,NC]
+  RewriteRule ^(wp-admin|wp-login|wp-content|wp-includes|xmlrpc|administrator|phpmyadmin)(/|\.|$) - [F,L,NC]
+</IfModule>
+
+# Backups, configs, logs, databases, archives and docs are never served
+<FilesMatch "(?i)\.(bak|old|orig|save|swp|tmp|sql|sqlite|db|env|ini|log|conf|config|cfg|yml|yaml|toml|lock|dist|md|zip|tar|gz|tgz|7z|rar)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # HTTPS only from now on (one year). Subdomains not included on purpose.
+  Header always set Strict-Transport-Security "max-age=31536000" "expr=%{HTTPS} == 'on'"
+
+  # Anti-phishing and clickjacking: nobody else can frame this site, load scripts from
+  # other origins, or point the forms anywhere except FormSubmit.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-qOhFsq0QMV2REqNwk5hGH5bZE9SkX6gt6yeyKdYPv+U='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml application/xml text/plain
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# Old page names from the first draft
+Redirect 301 /about.html https://realtopartners.com/dan-gomer.html
+Redirect 301 /join.html https://realtopartners.com/join-exp-realty-team.html
+
+# Serve llms.txt and robots.txt as plain UTF-8 text, sitemap as XML
+AddType "text/plain; charset=utf-8" .txt
+AddType "application/xml; charset=utf-8" .xml
